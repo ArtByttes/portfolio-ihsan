@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Build
+dist/
+
+# Logs
+*.log
+
+# Large media files (use Git LFS later)
+assets/videos/*.mp4
