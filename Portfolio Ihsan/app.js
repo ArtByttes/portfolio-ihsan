@@ -799,6 +799,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return (window.innerWidth <= 768) || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
     };
 
+    // Video playback disabled - YouTube iframes handle playback natively
+    /*
     portfolioCards.forEach(card => {
         const video = card.querySelector('.card-video');
 
@@ -830,6 +832,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+    */
 
     // ---------------------------------------------------------
     // 6.5 PORTFOLIO VIDEO MODAL POPUP
