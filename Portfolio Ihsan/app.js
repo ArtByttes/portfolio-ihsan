@@ -893,18 +893,9 @@ document.addEventListener('DOMContentLoaded', () => {
             document.exitFullscreen();
         }
 
-        // Wait for modal fade-out animation before restoring preview videos
+        // Wait for modal fade-out animation
         setTimeout(() => {
             document.body.classList.remove('portfolio-modal-open');
-            // Restore preview video sources
-            const previewVideos = document.querySelectorAll('.portfolio-card .card-video');
-            previewVideos.forEach(video => {
-                const card = video.closest('.portfolio-card');
-                const hoverVideoSrc = video.getAttribute('data-hover-src');
-                if (hoverVideoSrc && hoverVideoSrc !== 'null') {
-                    video.src = hoverVideoSrc;
-                }
-            });
         }, 300);
     };
 

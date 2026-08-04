@@ -8,4 +8,7 @@ dist/
 *.log
 
 # Large media files (use Git LFS later)
-assets/videos/*.mp4
+assets/videos/**/*.mp4
+
+# Vite cache
+.vite/
