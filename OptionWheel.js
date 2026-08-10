@@ -274,10 +274,6 @@ class OptionWheel {
     destroy() {
         if (this.raf != null) cancelAnimationFrame(this.raf);
         this.raf = null;
-        if (this.phoneScrollDriver) {
-            window.removeEventListener('scroll', this.phoneScrollDriver, { passive: true });
-            this.phoneScrollDriver = null;
-        }
         this.container.innerHTML = '';
         this.itemRefs = [];
         this.container.classList.remove('option-wheel', 'option-wheel--right', 'option-wheel--dragging');

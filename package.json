@@ -1,6 +1,7 @@
 {
   "name": "portfolio-ihsan-salleh",
   "version": "1.0.0",
+  "type": "module",
   "description": "Portfolio landing page for Ihsan Salleh - Videographer & Multimedia Specialist",
   "scripts": {
     "dev": "vite",
@@ -16,6 +17,6 @@
   "author": "Ihsan Salleh",
   "license": "ISC",
   "devDependencies": {
-    "vite": "^5.0.0"
+    "vite": "^8.2.1"
   }
 }

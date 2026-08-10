@@ -2,10 +2,14 @@
    Ihsan Salleh Portfolio JavaScript Logic - 2026
    ------------------------------------------------------------- */
 
+import { createRoot } from 'react-dom/client';
+import { createElement } from 'react';
+import OptionWheel from './OptionWheel.jsx';
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Initialize Lucide Icons
-    lucide.createIcons();
+    // Initialize Lucide Icons (guard against CDN failure)
+    window.lucide?.createIcons();
 
     // ---------------------------------------------------------
     // 0. IMAGE ERROR FALLBACK
@@ -139,10 +143,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ---------------------------------------------------------
-    // 2. LIGHT / DARK THEME SWITCHER
+    // 2. LIGHT / DARK THEME SWITCHER - DUAL VIDEO CROSSFADE
     // ---------------------------------------------------------
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
+    const videoDark = document.getElementById('hero-video-dark');
+    const videoLight = document.getElementById('hero-video-light');
+
+    // Keep playback positions aligned so crossfade looks seamless
+    const alignPlayback = () => {
+        if (!videoDark || !videoLight) return;
+        if (videoDark.paused && videoLight.paused) return;
+        const lead = !videoDark.paused ? videoDark : videoLight;
+        const follow = lead === videoDark ? videoLight : videoDark;
+        if (Math.abs(lead.currentTime - follow.currentTime) > 0.3) {
+            follow.currentTime = lead.currentTime;
+        }
+    };
 
     const setTheme = (theme) => {
         body.classList.toggle('light-theme', theme === 'light');
@@ -154,10 +171,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     setTheme(savedTheme);
 
+    // Start playback on both videos (muted autoplay allowed)
+    if (videoDark) videoDark.play().catch(() => {});
+    if (videoLight) videoLight.play().catch(() => {});
+
+    // Gentle drift correction, does not force play/seek on toggle
+    if (videoDark && videoLight) {
+        videoDark.addEventListener('timeupdate', alignPlayback);
+        videoLight.addEventListener('timeupdate', alignPlayback);
+    }
+
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
             const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
             setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            if (typeof renderWheel === 'function') renderWheel();
         });
     }
 
@@ -203,7 +231,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'port-title': 'Hasil Kerja & Studi Kasus Terpilih',
             'port-desc': 'Terokai projek terpilih mengikut kategori. Letakkan kursor pada kad (desktop) untuk memainkan pratonton video.',
             'filter-doc': 'Dokumentari',
-            'filter-ads': 'Event',
+            'filter-event': 'Event',
+            'filter-ads': 'Iklan',
             'filter-fnb': 'F&B',
             'filter-gfx': 'Grafik',
             'filter-ani': 'Animasi',
@@ -315,18 +344,6 @@ document.addEventListener('DOMContentLoaded', () => {
             'p12-title': 'Majlis Penyenaraian Orkim Berhad',
             'p13-title': 'Minggu Ekonomi dan Kewangan Awam',
             'p14-title': 'Penggulungan Perbahasan Peringkat Jawatankuasa Ekonomi',
-            'p3-title': 'Iklan Taco Bell Malaysia',
-            'p3-desc': 'Kempen promosi menu baru dengan visual F&B yang dynamic, crisp, dan menyelerakan untuk media sosial.',
-            'p3-res': 'Peningkatan 35% engagement pada Instagram & TikTok',
-            'p4-title': 'Kempen Realme Narzo 30',
-            'p4-desc': 'Video komersial pelancaran telefon pintar kelas permainan mudah alih berkonsepkan neon dan futuristik.',
-            'p4-res': 'Kempen pelancaran digital rasmi di seluruh Malaysia',
-            'p5-title': 'Aliyaa KL & Franks.KL Social Reels',
-            'p5-desc': 'Siri video promosi pendek memaparkan seni penyediaan koktel dan hidangan fine dining premium di Kuala Lumpur.',
-            'p5-res': '100k+ organic views merentasi platform gastronomi KL',
-            'p6-title': 'Infografik: Kenali Bendera Malaysia',
-            'p6-desc': 'Projek multimedia pendidikan menerangkan sejarah dan maksud di sebalik Jalur Gemilang secara dinamik.',
-            'p6-res': 'Digunakan sebagai bahan bantu mengajar sekolah menengah',
             'role-label': 'Peranan:',
             'result-label': 'Hasil:'
         },
@@ -367,6 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'port-title': 'Selected Works & Case Studies',
             'port-desc': 'Explore selected projects by category. Hover over cards (desktop) to play video previews.',
             'filter-doc': 'Documentary',
+            'filter-event': 'Event',
             'filter-ads': 'Event',
             'filter-fnb': 'F&B',
             'filter-gfx': 'Graphics',
@@ -479,18 +497,6 @@ document.addEventListener('DOMContentLoaded', () => {
             'p12-title': 'Orkim Berhad Listing Ceremony',
             'p13-title': 'Public Finance Economy Week',
             'p14-title': 'Economy Committee Level Debate Closing',
-            'p3-title': 'Taco Bell Malaysia Commercial',
-            'p3-desc': 'New menu promotional campaign with dynamic, crisp, and appetizing F&B visuals for social media.',
-            'p3-res': '35% increase in engagement on Instagram & TikTok',
-            'p4-title': 'Realme Narzo 30 Campaign',
-            'p4-desc': 'Commercial video for the launch of a mobile gaming smartphone with a neon and futuristic concept.',
-            'p4-res': 'Official digital launch campaign across Malaysia',
-            'p5-title': 'Aliyaa KL & Franks.KL Social Reels',
-            'p5-desc': 'A series of short promotional videos showcasing the art of cocktail preparation and premium fine dining in Kuala Lumpur.',
-            'p5-res': '100k+ organic views across KL gastronomy platforms',
-            'p6-title': 'Infographic: Know the Malaysian Flag',
-            'p6-desc': 'An educational multimedia project explaining the history and meaning behind the Jalur Gemilang dynamically.',
-            'p6-res': 'Used as a teaching aid in secondary schools',
             'role-label': 'Role:',
             'result-label': 'Result:'
         }
@@ -510,19 +516,58 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    const filterCategories = [
+        { label: 'Dokumentari', value: 'dokumentari' },
+        { label: 'Event', value: 'event' },
+        { label: 'F&B', value: 'fnb' },
+        { label: 'Grafik', value: 'grafik' },
+        { label: 'Animasi', value: 'animasi' },
+        { label: 'News Value', value: 'news' }
+    ];
+
+    const wheelLabelKey = (value) => {
+        const keyMap = {
+            dokumentari: 'filter-doc',
+            event: 'filter-event',
+            fnb: 'filter-fnb',
+            grafik: 'filter-gfx',
+            animasi: 'filter-ani',
+            news: 'filter-news'
+        };
+        return keyMap[value] || `filter-${value}`;
+    };
+
+    const wheelContainer = document.getElementById('portfolio-wheel-container');
+    const wheelLabels = [];
+    let wheelRoot = null;
+    let wheelOnChange = null;
+
+    const renderWheel = () => {
+        if (!wheelContainer) return;
+        if (!wheelRoot) wheelRoot = createRoot(wheelContainer);
+        const isLight = document.body.classList.contains('light-theme');
+        wheelRoot.render(createElement(OptionWheel, {
+            items: wheelLabels,
+            defaultSelected: 0,
+            side: 'left',
+            fontSize: 2.5,
+            spacing: 1.9,
+            tilt: 8,
+            blur: 1.2,
+            fade: 0.22,
+            inset: 34,
+            textColor: isLight ? '#666666' : '#a6a6a6',
+            activeColor: isLight ? '#111111' : '#ffffff',
+            onChange: (index) => wheelOnChange?.(index)
+        }));
+    };
+
     const syncWheelLabels = (lang) => {
-        if (!window.portfolioWheel) return;
-        const wheelLabels = [
-            getTranslation(lang, 'filter-doc', 'Dokumentari'),
-            getTranslation(lang, 'filter-ads', 'Iklan'),
-            getTranslation(lang, 'filter-fnb', 'F&B'),
-            getTranslation(lang, 'filter-gfx', 'Grafik'),
-            getTranslation(lang, 'filter-ani', 'Animasi'),
-            getTranslation(lang, 'filter-news', 'News Value')
-        ];
-        document.querySelectorAll('.option-wheel__item').forEach((el, index) => {
-            el.textContent = wheelLabels[index] || el.textContent;
+        wheelLabels.length = 0;
+        filterCategories.forEach(cat => {
+            wheelLabels.push(getTranslation(lang, wheelLabelKey(cat.value), cat.label));
         });
+        renderWheel();
     };
 
     const setLanguage = (lang) => {
@@ -630,105 +675,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ---------------------------------------------------------
-    // 5. CASE STUDY CATEGORY FILTER (OPTION WHEEL)
+    // 5. CASE STUDY CATEGORY FILTER (CUSTOM WHEEL PICKER)
     // ---------------------------------------------------------
     const portfolioCards = document.querySelectorAll('.portfolio-card');
 
-    const filterCategories = [
-        { label: 'Dokumentari', value: 'dokumentari' },
-        { label: 'Event', value: 'event' },
-        { label: 'F&B', value: 'fnb' },
-        { label: 'Grafik', value: 'grafik' },
-        { label: 'Animasi', value: 'animasi' },
-        { label: 'News Value', value: 'news' }
-    ];
-
-    const wheelContainer = document.getElementById('portfolio-wheel-container');
-
-    const initPortfolioWheel = () => {
-        if (!wheelContainer || typeof window.OptionWheel === 'undefined') return;
-        if (window.portfolioWheel) {
-            window.portfolioWheel.destroy();
-            window.portfolioWheel = null;
-        }
-        const isMobile = window.innerWidth <= 768;
-        const currentLang = document.documentElement.lang || 'ms';
-        const wheelLabels = [
-            translations[currentLang]['filter-doc'] || 'Dokumentari',
-            translations[currentLang]['filter-ads'] || 'Iklan',
-            translations[currentLang]['filter-fnb'] || 'F&B',
-            translations[currentLang]['filter-gfx'] || 'Grafik',
-            translations[currentLang]['filter-ani'] || 'Animasi',
-            translations[currentLang]['filter-news'] || 'News Value'
-        ];
-        window.portfolioWheel = new window.OptionWheel(wheelContainer, {
-            items: wheelLabels,
-            defaultSelected: 0,
-            textColor: 'var(--text-secondary)',
-            activeColor: 'var(--text-primary)',
-            fontSize: isMobile ? 3 : 3.5,
-            spacing: isMobile ? 1.3 : 1.3,
-            curve: 1,
-            tilt: 8,
-            blur: isMobile ? 1.5 : 1.5,
-            fade: isMobile ? 0.35 : 0.35,
-            minOpacity: 0.05,
-            smoothing: 260,
-            inset: 0,
-            side: 'left',
-            draggable: true,
-            loop: false,
-            onChange: (index) => {
-                const filterValue = filterCategories[index].value;
-                portfolioCards.forEach(card => {
-                    const categoryStr = card.getAttribute('data-category');
-                    const cardCategories = categoryStr ? categoryStr.split(',') : [];
-                    if (cardCategories.includes(filterValue)) {
-                        // If it was hidden, show it first so we can animate
-                        if (card.style.display === 'none') {
-                            card.style.display = '';
-                            // Force reflow
-                            card.offsetHeight;
-                        }
-                        card.classList.remove('fade-out');
-                        card.classList.add('fade-in');
-                    } else {
-                        card.classList.remove('fade-in');
-                        card.classList.add('fade-out');
-                        // Hide after transition
-                        setTimeout(() => {
-                            if (card.classList.contains('fade-out')) {
-                                card.style.display = 'none';
-                            }
-                        }, 400); // matches transition time
-                    }
-                });
-                
-                // Reset carousel scroll when changing filter
-                const grid = document.getElementById('portfolio-grid');
-                if (grid) {
-                    grid.scrollTo({ left: 0, behavior: 'smooth' });
-                    setTimeout(() => {
-                        if (typeof window.updateCarouselButtons === 'function') {
-                            window.updateCarouselButtons();
-                        }
-                    }, 450); // check after transition
+    const filterPortfolio = (filterValue) => {
+        portfolioCards.forEach(card => {
+            const categoryStr = card.getAttribute('data-category');
+            const cardCategories = categoryStr ? categoryStr.split(',') : [];
+            if (cardCategories.includes(filterValue)) {
+                if (card.style.display === 'none') {
+                    card.style.display = '';
+                    card.offsetHeight;
                 }
+                card.classList.remove('fade-out');
+                card.classList.add('fade-in');
+            } else {
+                card.classList.remove('fade-in');
+                card.classList.add('fade-out');
+                setTimeout(() => {
+                    if (card.classList.contains('fade-out')) {
+                        card.style.display = 'none';
+                    }
+                }, 400);
             }
         });
+        
+        const grid = document.getElementById('portfolio-grid');
+        if (grid) {
+            grid.scrollTo({ left: 0, behavior: 'smooth' });
+            setTimeout(() => {
+                if (typeof window.updateCarouselButtons === 'function') {
+                    window.updateCarouselButtons();
+                }
+            }, 450);
+        }
     };
 
-    initPortfolioWheel();
-
-    let wheelResizeTimer = null;
-    let wheelWasMobile = window.innerWidth <= 768;
-    window.addEventListener('resize', () => {
-        const nowMobile = window.innerWidth <= 768;
-        if (nowMobile === wheelWasMobile) return;
-        wheelWasMobile = nowMobile;
-        clearTimeout(wheelResizeTimer);
-        wheelResizeTimer = setTimeout(initPortfolioWheel, 200);
-    });
+    // Wire the wheel selection to the portfolio filter
+    wheelOnChange = (index) => {
+        const filterValue = filterCategories[index].value;
+        filterPortfolio(filterValue);
+    };
+    renderWheel();
 
     // ---------------------------------------------------------
     // 5.5 PORTFOLIO CAROUSEL NAVIGATION
@@ -793,30 +782,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ---------------------------------------------------------
-    // 6. VIDEO AUTOPLAY ON CARD HOVER (DESKTOP ONLY)
+    // 6. VIDEO PLAY ON CARD HOVER (DESKTOP ONLY)
     // ---------------------------------------------------------
     const isMobileDevice = () => {
         return (window.innerWidth <= 768) || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
     };
 
-    // Video playback disabled - YouTube iframes handle playback natively
-    /*
     portfolioCards.forEach(card => {
-        const video = card.querySelector('.card-video');
+        const video = card.querySelector('video.card-video');
 
         if (video) {
             // Hide play button while preview is playing
             video.addEventListener('playing', () => card.classList.add('video-playing'));
             video.addEventListener('pause', () => card.classList.remove('video-playing'));
 
-            // Mouse Enter (Hover starts)
+            // Mouse Enter (Hover starts playback)
             card.addEventListener('mouseenter', () => {
                 if (!isMobileDevice() && portfolioModal && !portfolioModal.classList.contains('active')) {
                     video.play().catch(() => {});
                 }
             });
 
-            // Mouse Leave (Hover ends)
+            // Mouse Leave (Hover ends playback)
             card.addEventListener('mouseleave', () => {
                 if (!isMobileDevice()) {
                     video.pause();
@@ -824,7 +811,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Handle visibility or bandwidth optimization on resize
+            // Pause on resize to mobile (bandwidth optimization)
             window.addEventListener('resize', () => {
                 if (isMobileDevice()) {
                     video.pause();
@@ -832,7 +819,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-    */
 
     // ---------------------------------------------------------
     // 6.5 PORTFOLIO VIDEO MODAL POPUP
@@ -853,21 +839,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!videoSrc) return;
 
-        // Force pause and reset all preview videos in cards
-        const previewVideos = document.querySelectorAll('.portfolio-card .card-video');
-        previewVideos.forEach(video => {
-            video.pause();
-            video.currentTime = 0;
-            video.removeAttribute('src');
-            video.load();
-        });
-
-        // Set video source
-        const source = portfolioModalVideo.querySelector('source');
-        if (source) {
-            source.src = videoSrc;
-            portfolioModalVideo.load();
-        }
+        // Load the video in the modal
+        portfolioModalVideo.src = videoSrc;
+        portfolioModalVideo.play().catch(() => {});
 
         // Set info
         portfolioModalTitle.textContent = title;
@@ -877,16 +851,13 @@ document.addEventListener('DOMContentLoaded', () => {
         portfolioModal.classList.add('active');
         document.body.style.overflow = 'hidden';
         document.body.classList.add('portfolio-modal-open');
-
-        // Auto-play video
-        portfolioModalVideo.play().catch(() => {});
     };
 
     const closePortfolioModal = () => {
         portfolioModal.classList.remove('active');
         document.body.style.overflow = '';
         portfolioModalVideo.pause();
-        portfolioModalVideo.currentTime = 0;
+        portfolioModalVideo.removeAttribute('src');
         
         // Exit fullscreen if active
         if (document.fullscreenElement) {
@@ -1063,8 +1034,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentLang = document.documentElement.lang || 'ms';
             const sendingText = currentLang === 'ms' ? 'Sedang dihantar...' : 'Sending...';
             submitBtn.innerHTML = `<i data-lucide="loader-2" class="animate-spin"></i> ${sendingText}`;
-            lucide.createIcons(); // refresh loader icon
-
+            window.lucide?.createIcons(); // refresh loader icon
             // Build WhatsApp message to owner's phone
             const categoryLabel = categorySelect.options[categorySelect.selectedIndex].text;
             const waText =
@@ -1079,7 +1049,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnHTML;
                 contactForm.setAttribute('aria-busy', 'false');
-                lucide.createIcons();
+                window.lucide?.createIcons();
 
                 // Open WhatsApp with pre-filled message (delivers to owner's phone)
                 window.open(waUrl, '_blank', 'noopener');
@@ -1209,22 +1179,37 @@ function onPlayerStateChange(event) {
             toggleBtn.classList.add('playing');
             toggleBtn.setAttribute('aria-label', 'Pause background music');
             toggleBtn.setAttribute('aria-pressed', 'true');
-            icon.setAttribute('data-lucide', 'volume-2');
-            lucide.createIcons();
+            if (icon) {
+                icon.setAttribute('data-lucide', 'volume-2');
+                window.lucide?.createIcons();
+            }
         }
     } 
-    // Paused / Ended / Unstarted
-    else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
+    // Paused / Ended / Unstarted / Cued
+    else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED
+        || event.data == YT.PlayerState.UNSTARTED || event.data == YT.PlayerState.CUED) {
         window.isMusicPlaying = false;
         if(toggleBtn) {
             toggleBtn.classList.remove('playing');
             toggleBtn.setAttribute('aria-label', 'Play background music');
             toggleBtn.setAttribute('aria-pressed', 'false');
-            icon.setAttribute('data-lucide', 'volume-x');
-            lucide.createIcons();
+            if (icon) {
+                icon.setAttribute('data-lucide', 'volume-x');
+                window.lucide?.createIcons();
+            }
         }
     }
 }
+
+// If the YouTube IFrame API never loads (ad-blocker / tracking prevention),
+// log a clear error so the failure is diagnosable instead of silent.
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        if (!window.ytPlayer) {
+            console.error('[bg-music] YouTube IFrame API failed to load - music player unavailable. Check ad-blocker / tracking prevention for www.youtube.com.');
+        }
+    }, 5000);
+});
 
 /* Hero background video parallax on cursor (desktop only) */
 function initHeroParallax() {

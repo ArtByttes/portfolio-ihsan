@@ -16,6 +16,14 @@
     <meta property="og:description"
         content="Saksikan showreel dan kajian kes video dokumentari serta komersial oleh Ihsan Salleh, pemenang Berita Video Terbaik MPI Petronas 2020.">
 
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' https:; connect-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com;">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,8 +34,8 @@
     <!-- Core CSS -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Lucide Icons CDN (pinned version) -->
+    <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 </head>
 
 <body class="dark-theme">
@@ -78,13 +86,12 @@
 
         <!-- SECTION 1: HERO SECTION -->
         <section id="home" class="hero-section hero-section-full section-reveal">
-            <!-- Background Video - Dark Theme -->
-            <video class="hero-bg-video hero-video hero-video-dark" id="hero-video-dark" autoplay muted loop playsinline preload="auto">
-                <source src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Kucing_tidur_editing_video_202607150057.mp4" type="video/mp4">
+            <!-- Background Video - Smooth CSS Crossfade -->
+            <video class="hero-bg-video hero-video hero-video-dark dark-video" autoplay loop muted playsinline aria-hidden="true">
+                <source src="assets/videos/Kucing_tidur_editing_video_202607150057.mp4" type="video/mp4">
             </video>
-            <!-- Background Video - Light Theme -->
-            <video class="hero-bg-video hero-video hero-video-light" id="hero-video-light" autoplay muted loop playsinline preload="auto">
-                <source src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Kucing_tidur_editing_video_202607150057%20(1).mp4" type="video/mp4">
+            <video class="hero-bg-video hero-video hero-video-light light-video" autoplay loop muted playsinline aria-hidden="true">
+                <source src="assets/videos/Kucing_tidur_editing_video_202607150057 (1).mp4" type="video/mp4">
             </video>
 
             <div class="container hero-container-overlay">
@@ -228,9 +235,9 @@
                 <!-- Two-column layout: Wheel Left + Grid Right -->
                 <div class="portfolio-layout">
 
-                    <!-- LEFT: Wheel Filter -->
+                    <!-- LEFT: OptionWheel Filter -->
                     <div class="portfolio-wheel-side">
-                        <div id="portfolio-wheel-container" class="wheel-picker-container"></div>
+                        <div id="portfolio-wheel-container"></div>
                     </div>
 
                     <!-- RIGHT: Portfolio Grid -->
@@ -243,11 +250,11 @@
                             <div class="portfolio-grid" id="portfolio-grid">
 
                             <!-- Portfolio Item 1 (Dokumentari) -->
-                            <div class="portfolio-card" data-category="dokumentari" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/icu-ke-liang-lahad.mp4">
+                            <div class="portfolio-card" data-category="dokumentari" data-video="assets/videos/icu-ke-liang-lahad.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
                                         <img src="https://images.unsplash.com/photo-1584824486509-112e4181ff6b?auto=format&fit=crop&w=600&q=80" alt="Dari ICU ke Liang Lahad" class="card-img" loading="lazy">
-                                        <video class="card-video" controls controlslist="nodownload" poster="https://images.unsplash.com/photo-1584824486509-112e4181ff6b?auto=format&fit=crop&w=600&q=80" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/icu-ke-liang-lahad.mp4" loop></video>
+                                        <video class="card-video" src="assets/videos/icu-ke-liang-lahad.mp4" data-hover-src="assets/videos/icu-ke-liang-lahad.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -268,11 +275,11 @@
                             </div>
 
                             <!-- Portfolio Item 2 (Dokumentari) -->
-                            <div class="portfolio-card" data-category="dokumentari" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/kita-mesti-menang.mp4">
+                            <div class="portfolio-card" data-category="dokumentari" data-video="assets/videos/kita-mesti-menang.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
                                         <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="Kita Mesti Menang" class="card-img" loading="lazy">
-                                        <video class="card-video" controls controlslist="nodownload" poster="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/kita-mesti-menang.mp4" loop></video>
+                                        <video class="card-video" src="assets/videos/kita-mesti-menang.mp4" data-hover-src="assets/videos/kita-mesti-menang.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -293,11 +300,11 @@
                             </div>
 
                             <!-- Portfolio Item 3 (Dokumentari) -->
-                            <div class="portfolio-card" data-category="dokumentari" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/ramadan-balik-jeriji-besi.mp4">
+                            <div class="portfolio-card" data-category="dokumentari" data-video="assets/videos/ramadan-jeriji-besi.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
                                         <img src="https://images.unsplash.com/photo-1564503218178-b6f4f6a100c5?auto=format&fit=crop&w=600&q=80" alt="Ramadan di Balik Jeriji Besi" class="card-img" loading="lazy">
-                                        <video class="card-video" controls controlslist="nodownload" poster="https://images.unsplash.com/photo-1564503218178-b6f4f6a100c5?auto=format&fit=crop&w=600&q=80" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/ramadan-balik-jeriji-besi.mp4" loop></video>
+                                        <video class="card-video" src="assets/videos/ramadan-jeriji-besi.mp4" data-hover-src="assets/videos/ramadan-jeriji-besi.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -318,11 +325,11 @@
                             </div>
 
                             <!-- Portfolio Item 4 (Dokumentari) -->
-                            <div class="portfolio-card" data-category="dokumentari" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/covid-bekerja-mayat.mp4">
+                            <div class="portfolio-card" data-category="dokumentari" data-video="assets/videos/covid-bekerja-mayat.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
                                         <img src="https://images.unsplash.com/photo-1584824486509-112e4181ff6b?auto=format&fit=crop&w=600&q=80" alt="Covid-19 Bekerja Dengan Mayat" class="card-img" loading="lazy">
-                                        <video class="card-video" controls controlslist="nodownload" poster="https://images.unsplash.com/photo-1584824486509-112e4181ff6b?auto=format&fit=crop&w=600&q=80" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/covid-bekerja-mayat.mp4" loop></video>
+                                        <video class="card-video" src="assets/videos/covid-bekerja-mayat.mp4" data-hover-src="assets/videos/covid-bekerja-mayat.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -343,11 +350,11 @@
                             </div>
 
                             <!-- Portfolio Item 5 (Dokumentari) -->
-                            <div class="portfolio-card" data-category="dokumentari" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/tudm-gagah-pertahan.mp4">
+                            <div class="portfolio-card" data-category="dokumentari" data-video="assets/videos/tudm-gagah-pertahan.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
                                         <img src="https://images.unsplash.com/photo-1569629743817-70d8db6c323b?auto=format&fit=crop&w=600&q=80" alt="TUDM Gagah Pertahan Sebuah Kedaulatan" class="card-img" loading="lazy">
-                                        <video class="card-video" controls controlslist="nodownload" poster="https://images.unsplash.com/photo-1569629743817-70d8db6c323b?auto=format&fit=crop&w=600&q=80" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/tudm-gagah-pertahan.mp4" loop></video>
+                                        <video class="card-video" src="assets/videos/tudm-gagah-pertahan.mp4" data-hover-src="assets/videos/tudm-gagah-pertahan.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -367,12 +374,36 @@
                                 </div>
                             </div>
 
-                            <!-- Portfolio Item 6 (F&B) -->
-                            <div class="portfolio-card" data-category="fnb" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/fb-card-1.mp4">
+                            <!-- Portfolio Item 6 (Dokumentari) -->
+                            <div class="portfolio-card" data-category="dokumentari" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/%F0%9F%8E%A5%20Hati%20Kami%20Merintih%20Merindui-Mu%20-%20MalaysiaGazette%20TV%20(720p%2C%20h264).mp4">
+                                <div class="card-media">
+                                    <div class="video-container">
+                                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="Hati Kami Merintih Merindui-Mu" class="card-img" loading="lazy">
+                                        <video class="card-video" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/%F0%9F%8E%A5%20Hati%20Kami%20Merintih%20Merindui-Mu%20-%20MalaysiaGazette%20TV%20(720p%2C%20h264).mp4" data-hover-src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/%F0%9F%8E%A5%20Hati%20Kami%20Merintih%20Merindui-Mu%20-%20MalaysiaGazette%20TV%20(720p%2C%20h264).mp4" loop muted playsinline></video>
+                                    </div>
+                                    <button type="button" class="card-play-btn" aria-label="Play video preview">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                            <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M20 16L32 24L20 32V16Z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div class="card-badge">Dokumentari</div>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-project-title">Hati Kami Merintih Merindui-Mu</h3>
+                                    <p class="card-description">Feature documentary with MalaysiaGazette TV.</p>
+                                    <div class="project-meta">
+                                        <span><strong>Peranan:</strong> Editor</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Item 7 (F&B) -->
+                            <div class="portfolio-card" data-category="fnb" data-video="assets/videos/fb-card-1.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
                                         <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="F&B Project 1" class="card-img" loading="lazy">
-                                        <video class="card-video" controls controlslist="nodownload" poster="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/fb-card-1.mp4" loop></video>
+                                        <video class="card-video" src="assets/videos/fb-card-1.mp4" data-hover-src="assets/videos/fb-card-1.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -391,12 +422,12 @@
                                 </div>
                             </div>
 
-                            <!-- Portfolio Item 7 (F&B) -->
-                            <div class="portfolio-card" data-category="fnb" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/fb-bocado.mp4">
+                            <!-- Portfolio Item 8 (F&B) -->
+                            <div class="portfolio-card" data-category="fnb" data-video="assets/videos/fb-bocado.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
                                         <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80" alt="Bocado" class="card-img" loading="lazy">
-                                        <video class="card-video" controls controlslist="nodownload" poster="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/fb-bocado.mp4" loop></video>
+                                        <video class="card-video" src="assets/videos/fb-bocado.mp4" data-hover-src="assets/videos/fb-bocado.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -416,11 +447,11 @@
                             </div>
 
                             <!-- Portfolio Item 8 (F&B) -->
-                            <div class="portfolio-card" data-category="fnb" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/fb-aliyaa-crab.mp4">
+                            <div class="portfolio-card" data-category="fnb" data-video="assets/videos/fb-aliyaa-crab.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
                                         <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=600&q=80" alt="Aliyaa Crab Rasam" class="card-img" loading="lazy">
-                                        <video class="card-video" controls controlslist="nodownload" poster="https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=600&q=80" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/fb-aliyaa-crab.mp4" loop></video>
+                                        <video class="card-video" src="assets/videos/fb-aliyaa-crab.mp4" data-hover-src="assets/videos/fb-aliyaa-crab.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -431,8 +462,8 @@
                                     <div class="card-badge">F&amp;B</div>
                                 </div>
                                 <div class="card-info">
-                                    <h3 class="card-project-title" data-i18n="p8-title">Highlight Reel for New Restaurant Opening Feliz KL</h3>
-                                    <p class="card-description" data-i18n="p8-desc">Latin American flavours and vibes at Feliz.</p>
+                                    <h3 class="card-project-title" data-i18n="p8-title">Aliyaa Jaffna Style Crab Curry</h3>
+                                    <p class="card-description" data-i18n="p8-desc">A symphony of spices and succulent crab curry.</p>
                                     <div class="project-meta">
                                         <span><strong data-i18n="role-label">Peranan:</strong> Videographer &amp; Editor</span>
                                     </div>
@@ -440,11 +471,11 @@
                             </div>
 
                             <!-- Portfolio Item 9 (F&B) -->
-                            <div class="portfolio-card" data-category="fnb" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/fb-ver-redo.mp4">
+                            <div class="portfolio-card" data-category="fnb" data-video="assets/videos/fb-ver-redo.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
                                         <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80" alt="F&B Project 4" class="card-img" loading="lazy">
-                                        <video class="card-video" controls controlslist="nodownload" poster="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/fb-ver-redo.mp4" loop></video>
+                                        <video class="card-video" src="assets/videos/fb-ver-redo.mp4" data-hover-src="assets/videos/fb-ver-redo.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -464,11 +495,11 @@
                             </div>
 
                             <!-- Portfolio Item 10 (F&B) -->
-                            <div class="portfolio-card" data-category="fnb" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/fb-card-5.mp4">
+                            <div class="portfolio-card" data-category="fnb" data-video="assets/videos/fb-card-5.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
                                         <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=600&q=80" alt="F&B Project 5" class="card-img" loading="lazy">
-                                        <video class="card-video" controls controlslist="nodownload" poster="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=600&q=80" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/fb-card-5.mp4" loop></video>
+                                        <video class="card-video" src="assets/videos/fb-card-5.mp4" data-hover-src="assets/videos/fb-card-5.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -488,10 +519,11 @@
                             </div>
 
                             <!-- Portfolio Item 11 (Event) -->
-                            <div class="portfolio-card" data-category="event" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Event-Amanat.mp4">
+                            <div class="portfolio-card" data-category="event" data-video="assets/videos/event-amanat.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
-<video class="card-video" controls controlslist="nodownload" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Event-Amanat.mp4" loop></video>
+                                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80" alt="Amanat" class="card-img" loading="lazy">
+                                        <video class="card-video" src="assets/videos/event-amanat.mp4" data-hover-src="assets/videos/event-amanat.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -510,11 +542,11 @@
                             </div>
 
                             <!-- Portfolio Item 12 (Event) -->
-                            <div class="portfolio-card" data-category="event" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Event-Bursa4.mp4">
+                            <div class="portfolio-card" data-category="event" data-video="assets/videos/event-bursa4.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
                                         <img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=600&q=80" alt="Bursa4" class="card-img" loading="lazy">
-                                        <video class="card-video" controls controlslist="nodownload" poster="https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=600&q=80" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Event-Bursa4.mp4" loop></video>
+                                        <video class="card-video" src="assets/videos/event-bursa4.mp4" data-hover-src="assets/videos/event-bursa4.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -533,10 +565,11 @@
                             </div>
 
                             <!-- Portfolio Item 13 (Event) -->
-                            <div class="portfolio-card" data-category="event" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Event-Minggu-Ekonomi.mp4">
+                            <div class="portfolio-card" data-category="event" data-video="assets/videos/event-minggu-ekonomi.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
-<video class="card-video" controls controlslist="nodownload" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Event-Minggu-Ekonomi.mp4" loop></video>
+                                        <img src="https://images.unsplash.com/photo-1560439514-4e9645039924?auto=format&fit=crop&w=600&q=80" alt="Minggu Ekonomi dan Kewangan Awam" class="card-img" loading="lazy">
+                                        <video class="card-video" src="assets/videos/event-minggu-ekonomi.mp4" data-hover-src="assets/videos/event-minggu-ekonomi.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -555,11 +588,11 @@
                             </div>
 
                             <!-- Portfolio Item 14 (Event) -->
-                            <div class="portfolio-card" data-category="event" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Event-Parlimen.mp4">
+                            <div class="portfolio-card" data-category="event" data-video="assets/videos/event-parlimen.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
                                         <img src="https://images.unsplash.com/photo-1575517842014-61f7d506867e?auto=format&fit=crop&w=600&q=80" alt="Parlimen" class="card-img" loading="lazy">
-                                        <video class="card-video" controls controlslist="nodownload" poster="https://images.unsplash.com/photo-1575517842014-61f7d506867e?auto=format&fit=crop&w=600&q=80" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Event-Parlimen.mp4" loop></video>
+                                        <video class="card-video" src="assets/videos/event-parlimen.mp4" data-hover-src="assets/videos/event-parlimen.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -578,11 +611,11 @@
                             </div>
 
                             <!-- Portfolio Item 15 (News Value) -->
-                            <div class="portfolio-card" data-category="news" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/news-waytha-moorthy.mp4">
+                            <div class="portfolio-card" data-category="news" data-video="assets/videos/news-waytha-moorthy.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
                                         <img src="https://images.unsplash.com/photo-1584824486509-112e4181ff6b?auto=format&fit=crop&w=600&q=80" alt="Waytha Moorthy di Kuil" class="card-img" loading="lazy">
-                                        <video class="card-video" controls controlslist="nodownload" poster="https://images.unsplash.com/photo-1584824486509-112e4181ff6b?auto=format&fit=crop&w=600&q=80" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/news-waytha-moorthy.mp4" loop></video>
+                                        <video class="card-video" src="assets/videos/news-waytha-moorthy.mp4" data-hover-src="assets/videos/news-waytha-moorthy.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -602,11 +635,11 @@
                             </div>
 
                             <!-- Portfolio Item 16 (News Value) -->
-                            <div class="portfolio-card" data-category="news" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/news-pak-cik-askar.mp4">
+                            <div class="portfolio-card" data-category="news" data-video="assets/videos/news-pak-cik-askar.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
                                         <img src="https://images.unsplash.com/photo-1584824486509-112e4181ff6b?auto=format&fit=crop&w=600&q=80" alt="Pak Cik Askar Mengamuk" class="card-img" loading="lazy">
-                                        <video class="card-video" controls controlslist="nodownload" poster="https://images.unsplash.com/photo-1584824486509-112e4181ff6b?auto=format&fit=crop&w=600&q=80" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/news-pak-cik-askar.mp4" loop></video>
+                                        <video class="card-video" src="assets/videos/news-pak-cik-askar.mp4" data-hover-src="assets/videos/news-pak-cik-askar.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -626,11 +659,11 @@
                             </div>
 
                             <!-- Portfolio Item 17 (News Value) -->
-                            <div class="portfolio-card" data-category="news" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/news-kuil-sri-mariammam.mp4">
+                            <div class="portfolio-card" data-category="news" data-video="assets/videos/news-kuil-sri-mariammam.mp4">
                                 <div class="card-media">
                                     <div class="video-container">
-                                        <img src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/news-kuil-sri-mariammam.jpg" alt="Situasi Tegang di Kuil Sri Mariammam" class="card-img" loading="lazy">
-                                        <video class="card-video" controls controlslist="nodownload" poster="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/news-kuil-sri-mariammam.jpg" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/news-kuil-sri-mariammam.mp4" loop></video>
+                                         <img src="assets/videos/news-kuil-sri-mariammam.png" alt="Situasi Tegang di Kuil Sri Mariammam" class="card-img" loading="lazy">
+                                        <video class="card-video" src="assets/videos/news-kuil-sri-mariammam.mp4" data-hover-src="assets/videos/news-kuil-sri-mariammam.mp4" loop muted playsinline></video>
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -649,11 +682,11 @@
                                 </div>
                             </div>
 
-                            <!-- Portfolio Item 18 (News Value) -->
-                            <div class="portfolio-card" data-category="news" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/TERKINI%20_%20POLIS%20KENA%20MARAH!%20Najib%20Pertahan%20Seorang%20Pelajar%20Law%20Kena%20Tarik%20Bila%20Tanya%20Soalan.mp4">
+                            <!-- Portfolio Item 18 (Animation) -->
+                            <div class="portfolio-card" data-category="animasi" data-media="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/Animation/Aliya_4.gif">
                                 <div class="card-media">
                                     <div class="video-container">
-                                        <video class="card-video" controls controlslist="nodownload" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/TERKINI%20_%20POLIS%20KENA%20MARAH!%20Najib%20Pertahan%20Seorang%20Pelajar%20Law%20Kena%20Tarik%20Bila%20Tanya%20Soalan.mp4" loop></video>
+                                        <img src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/Animation/Aliya_4.gif" alt="Aliya Animation" class="card-img" loading="lazy">
                                     </div>
                                     <button type="button" class="card-play-btn" aria-label="Play video preview">
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -661,13 +694,301 @@
                                             <path d="M20 16L32 24L20 32V16Z" fill="currentColor"/>
                                         </svg>
                                     </button>
-                                    <div class="card-badge">News Value</div>
+                                    <div class="card-badge">Animation</div>
                                 </div>
                                 <div class="card-info">
-                                    <h3 class="card-project-title">Polis Kena Marah! Najib Pertahan Seorang Pelajar Law Kena Tarik Bila Tanya Soalan</h3>
-                                    <p class="card-description">Liputan berita terkini</p>
+                                    <h3 class="card-project-title">Aliya Animation Reel</h3>
+                                    <p class="card-description">Character animation showcase for the Aliya brand.</p>
                                     <div class="project-meta">
-                                        <span><strong data-i18n="role-label">Peranan:</strong> <span>Videographer &amp; Editor</span></span>
+                                        <span><strong>Peranan:</strong> Animator &amp; Editor</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Item 19 (Animation) -->
+                            <div class="portfolio-card" data-category="animasi" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/Animation/TacoBell(MUSICCHANGE).mp4">
+                                <div class="card-media">
+                                    <div class="video-container">
+                                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Taco Bell Animation" class="card-img" loading="lazy">
+                                        <video class="card-video" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/Animation/TacoBell(MUSICCHANGE).mp4" data-hover-src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/Animation/TacoBell(MUSICCHANGE).mp4" loop muted playsinline></video>
+                                    </div>
+                                    <button type="button" class="card-play-btn" aria-label="Play video preview">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                            <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M20 16L32 24L20 32V16Z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div class="card-badge">Animation</div>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-project-title">Taco Bell</h3>
+                                    <p class="card-description">Animated commercial promo for Taco Bell Malaysia.</p>
+                                    <div class="project-meta">
+                                        <span><strong>Peranan:</strong> Animator &amp; Editor</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Item 20 (Animation) -->
+                            <div class="portfolio-card" data-category="animasi" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/Animation/tiktok_TikTok.mp4">
+                                <div class="card-media">
+                                    <div class="video-container">
+                                        <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80" alt="Pot Laksa Animation" class="card-img" loading="lazy">
+                                        <video class="card-video" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/Animation/tiktok_TikTok.mp4" data-hover-src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/Animation/tiktok_TikTok.mp4" loop muted playsinline></video>
+                                    </div>
+                                    <button type="button" class="card-play-btn" aria-label="Play video preview">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                            <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M20 16L32 24L20 32V16Z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div class="card-badge">Animation</div>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-project-title">Pot Laksa</h3>
+                                    <p class="card-description">Animated social media reel for Pot Laksa.</p>
+                                    <div class="project-meta">
+                                        <span><strong>Peranan:</strong> Animator &amp; Editor</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Item 21 (Animation) -->
+                            <div class="portfolio-card" data-category="animasi" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/Animation/YarlStopmotion_2.mp4">
+                                <div class="card-media">
+                                    <div class="video-container">
+                                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=80" alt="Yarl Stopmotion" class="card-img" loading="lazy">
+                                        <video class="card-video" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/Animation/YarlStopmotion_2.mp4" data-hover-src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/Animation/YarlStopmotion_2.mp4" loop muted playsinline></video>
+                                    </div>
+                                    <button type="button" class="card-play-btn" aria-label="Play video preview">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                            <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M20 16L32 24L20 32V16Z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div class="card-badge">Animation</div>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-project-title">Yarl - Stopmotion</h3>
+                                    <p class="card-description">Stopmotion animation showcase.</p>
+                                    <div class="project-meta">
+                                        <span><strong>Peranan:</strong> Animator &amp; Editor</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Item 22 (Event) -->
+                            <div class="portfolio-card" data-category="event" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Final%20Event%20New%20Year%20Hires(Compress)%20-%20COMPRESS-compressed-compressed-compressed.mp4">
+                                <div class="card-media">
+                                    <div class="video-container">
+                                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" alt="Event New Year Hires" class="card-img" loading="lazy">
+                                        <video class="card-video" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Final%20Event%20New%20Year%20Hires(Compress)%20-%20COMPRESS-compressed-compressed-compressed.mp4" data-hover-src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Final%20Event%20New%20Year%20Hires(Compress)%20-%20COMPRESS-compressed-compressed-compressed.mp4" loop muted playsinline></video>
+                                    </div>
+                                    <button type="button" class="card-play-btn" aria-label="Play video preview">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                            <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M20 16L32 24L20 32V16Z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div class="card-badge">Event</div>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-project-title">New Year Hires Event</h3>
+                                    <p class="card-description">Event coverage and highlight reel for New Year hires.</p>
+                                    <div class="project-meta">
+                                        <span><strong>Peranan:</strong> Videographer &amp; Editor</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Item 23 (Montage) -->
+                            <div class="portfolio-card" data-category="montage" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/2.%20Final%20Video%20Gimik%20Launching-compressed.mp4">
+                                <div class="card-media">
+                                    <div class="video-container">
+                                        <img src="https://images.unsplash.com/photo-1492724441997-39fb5ab2d918?auto=format&fit=crop&w=600&q=80" alt="Gimik Launching Montage" class="card-img" loading="lazy">
+                                        <video class="card-video" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/2.%20Final%20Video%20Gimik%20Launching-compressed.mp4" data-hover-src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/2.%20Final%20Video%20Gimik%20Launching-compressed.mp4" loop muted playsinline></video>
+                                    </div>
+                                    <button type="button" class="card-play-btn" aria-label="Play video preview">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                            <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M20 16L32 24L20 32V16Z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div class="card-badge">Montage</div>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-project-title">Gimik Launching</h3>
+                                    <p class="card-description">Montage video for product launching gimik.</p>
+                                    <div class="project-meta">
+                                        <span><strong>Peranan:</strong> Editor</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Item 24 (Interview) -->
+                            <div class="portfolio-card" data-category="interview" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/%F0%9F%8E%A5%20EKSKLUSIF%20OWH!%20MG%20%20Tun%20Keterlaluan%20-%20Najib%20Razak%20-%20MalaysiaGazette%20TV%20(720p%2C%20h264%2C%20youtube)-compressed.mp4">
+                                <div class="card-media">
+                                    <div class="video-container">
+                                        <img src="https://images.unsplash.com/photo-1495020689067-3fc11bbde1a9?auto=format&fit=crop&w=600&q=80" alt="Interview Exclusive" class="card-img" loading="lazy">
+                                        <video class="card-video" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/%F0%9F%8E%A5%20EKSKLUSIF%20OWH!%20MG%20%20Tun%20Keterlaluan%20-%20Najib%20Razak%20-%20MalaysiaGazette%20TV%20(720p%2C%20h264%2C%20youtube)-compressed.mp4" data-hover-src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/%F0%9F%8E%A5%20EKSKLUSIF%20OWH!%20MG%20%20Tun%20Keterlaluan%20-%20Najib%20Razak%20-%20MalaysiaGazette%20TV%20(720p%2C%20h264%2C%20youtube)-compressed.mp4" loop muted playsinline></video>
+                                    </div>
+                                    <button type="button" class="card-play-btn" aria-label="Play video preview">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                            <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M20 16L32 24L20 32V16Z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div class="card-badge">Interview</div>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-project-title">Eksklusif OWH! MG - Tun Keterlaluan</h3>
+                                    <p class="card-description">Interview feature with MalaysiaGazette TV.</p>
+                                    <div class="project-meta">
+                                        <span><strong>Peranan:</strong> Editor</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Item 25 (Short Video) -->
+                            <div class="portfolio-card" data-category="shortvideo" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Versa_2-compressed.mp4">
+                                <div class="card-media">
+                                    <div class="video-container">
+                                        <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=600&q=80" alt="Versa Short Video" class="card-img" loading="lazy">
+                                        <video class="card-video" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Versa_2-compressed.mp4" data-hover-src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Versa_2-compressed.mp4" loop muted playsinline></video>
+                                    </div>
+                                    <button type="button" class="card-play-btn" aria-label="Play video preview">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                            <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M20 16L32 24L20 32V16Z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div class="card-badge">Short Video</div>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-project-title">Versa</h3>
+                                    <p class="card-description">Short-form video edit.</p>
+                                    <div class="project-meta">
+                                        <span><strong>Peranan:</strong> Editor</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Item 26 (Short Video) -->
+                            <div class="portfolio-card" data-category="shortvideo" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/TACOBELL_new_8-compressed.mp4">
+                                <div class="card-media">
+                                    <div class="video-container">
+                                        <img src="https://images.unsplash.com/photo-1559925393-8b2c2f9b6c0e?auto=format&fit=crop&w=600&q=80" alt="Taco Bell Short Video" class="card-img" loading="lazy">
+                                        <video class="card-video" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/TACOBELL_new_8-compressed.mp4" data-hover-src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/TACOBELL_new_8-compressed.mp4" loop muted playsinline></video>
+                                    </div>
+                                    <button type="button" class="card-play-btn" aria-label="Play video preview">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                            <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M20 16L32 24L20 32V16Z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div class="card-badge">Short Video</div>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-project-title">Taco Bell</h3>
+                                    <p class="card-description">Short-form video edit for Taco Bell.</p>
+                                    <div class="project-meta">
+                                        <span><strong>Peranan:</strong> Editor</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Item 27 (Short Video) -->
+                            <div class="portfolio-card" data-category="shortvideo" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Snapinsta.app_video_311197378_1821850651562084_5300514460169863093_n.mp4">
+                                <div class="card-media">
+                                    <div class="video-container">
+                                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80" alt="Short Video Reel" class="card-img" loading="lazy">
+                                        <video class="card-video" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Snapinsta.app_video_311197378_1821850651562084_5300514460169863093_n.mp4" data-hover-src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Snapinsta.app_video_311197378_1821850651562084_5300514460169863093_n.mp4" loop muted playsinline></video>
+                                    </div>
+                                    <button type="button" class="card-play-btn" aria-label="Play video preview">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                            <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M20 16L32 24L20 32V16Z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div class="card-badge">Short Video</div>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-project-title">Short Video Reel</h3>
+                                    <p class="card-description">Short-form social media reel.</p>
+                                    <div class="project-meta">
+                                        <span><strong>Peranan:</strong> Editor</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Item 28 (Brand) -->
+                            <div class="portfolio-card" data-category="brand" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Double%20Decker%20Lagi%20Cheesy%20Taco.mp4">
+                                <div class="card-media">
+                                    <div class="video-container">
+                                        <img src="https://images.unsplash.com/photo-1565299507177-b0ac66793828?auto=format&fit=crop&w=600&q=80" alt="Double Decker Cheesy Taco" class="card-img" loading="lazy">
+                                        <video class="card-video" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Double%20Decker%20Lagi%20Cheesy%20Taco.mp4" data-hover-src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Double%20Decker%20Lagi%20Cheesy%20Taco.mp4" loop muted playsinline></video>
+                                    </div>
+                                    <button type="button" class="card-play-btn" aria-label="Play video preview">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                            <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M20 16L32 24L20 32V16Z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div class="card-badge">Brand</div>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-project-title">Double Decker Cheesy Taco</h3>
+                                    <p class="card-description">Brand video for Taco Bell promotion.</p>
+                                    <div class="project-meta">
+                                        <span><strong>Peranan:</strong> Editor</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Item 29 (Brand) -->
+                            <div class="portfolio-card" data-category="brand" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Craveable%20Mexican-inspired%20food%20LIKE%20NEVER%20BEFORE%20-%20only%20at%20Taco%20Bell.%20%F0%9F%8C%AE%20%F0%9F%94%94%20%F0%9F%92%9C.mp4">
+                                <div class="card-media">
+                                    <div class="video-container">
+                                        <img src="https://images.unsplash.com/photo-1552332386-f8dd1525c96c?auto=format&fit=crop&w=600&q=80" alt="Taco Bell Brand Video" class="card-img" loading="lazy">
+                                        <video class="card-video" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Craveable%20Mexican-inspired%20food%20LIKE%20NEVER%20BEFORE%20-%20only%20at%20Taco%20Bell.%20%F0%9F%8C%AE%20%F0%9F%94%94%20%F0%9F%92%9C.mp4" data-hover-src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/Craveable%20Mexican-inspired%20food%20LIKE%20NEVER%20BEFORE%20-%20only%20at%20Taco%20Bell.%20%F0%9F%8C%AE%20%F0%9F%94%94%20%F0%9F%92%9C.mp4" loop muted playsinline></video>
+                                    </div>
+                                    <button type="button" class="card-play-btn" aria-label="Play video preview">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                            <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M20 16L32 24L20 32V16Z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div class="card-badge">Brand</div>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-project-title">Craveable Mexican-Inspired Food</h3>
+                                    <p class="card-description">Brand video for Taco Bell promotion.</p>
+                                    <div class="project-meta">
+                                        <span><strong>Peranan:</strong> Editor</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Item 30 (Brand) -->
+                            <div class="portfolio-card" data-category="brand" data-video="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/REALME%20NARZO%2030%20Pengalaman%20Permainan%20Atas%20Talian%20Paling%20'Smooth'%20-%20MG%20Perak%20(720p%2C%20h264).mp4">
+                                <div class="card-media">
+                                    <div class="video-container">
+                                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80" alt="Realme Narzo 30 Brand Video" class="card-img" loading="lazy">
+                                        <video class="card-video" src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/REALME%20NARZO%2030%20Pengalaman%20Permainan%20Atas%20Talian%20Paling%20'Smooth'%20-%20MG%20Perak%20(720p%2C%20h264).mp4" data-hover-src="https://file.garden/akfMPQoKFEFRZBNA/Video%20Asset%20website/videos/REALME%20NARZO%2030%20Pengalaman%20Permainan%20Atas%20Talian%20Paling%20'Smooth'%20-%20MG%20Perak%20(720p%2C%20h264).mp4" loop muted playsinline></video>
+                                    </div>
+                                    <button type="button" class="card-play-btn" aria-label="Play video preview">
+                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                            <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M20 16L32 24L20 32V16Z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div class="card-badge">Brand</div>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-project-title">Realme Narzo 30</h3>
+                                    <p class="card-description">Brand video for Realme Narzo 30 gaming experience.</p>
+                                    <div class="project-meta">
+                                        <span><strong>Peranan:</strong> Editor</span>
                                     </div>
                                 </div>
                             </div>
@@ -1090,7 +1411,7 @@
                         <circle cx="27" cy="13" r="1.5" fill="currentColor"/>
                     </svg>
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-link">
+                <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="social-link">
                     <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M24 8h-3c-2.2 0-4 1.8-4 4v3h-3v4h3v13h4V19h3l1-4h-4v-3c0-.6.4-1 1-1h3V8z" fill="currentColor"/>
                     </svg>
@@ -1112,11 +1433,6 @@
             <p class="copyright-text">
                 &copy; 2026 Ihsan Salleh. Hak Cipta Terpelihara.
             </p>
-            <div class="footer-legal-links">
-                <a href="#" class="legal-link">Privacy Policy</a>
-                <span class="legal-divider">|</span>
-                <a href="#" class="legal-link">Terms of Service</a>
-            </div>
         </div>
     </footer>
 
@@ -1157,7 +1473,11 @@
                 </svg>
             </button>
             <div class="portfolio-modal-video-wrapper">
-                <video id="portfolio-modal-video" controls preload="auto" playsinline></video>
+                <video id="portfolio-modal-video" controls controlslist="nofullscreen" disablepictureinpicture preload="auto" playsinline>
+                    <source src="" type="video/mp4">
+                    Penyemak imbas anda tidak menyokong tag video HTML5.
+                </video>
+                <img id="portfolio-modal-image" class="portfolio-modal-image" src="" alt="">
             </div>
             <div class="portfolio-modal-info">
                 <h3 id="portfolio-modal-title"></h3>
@@ -1168,6 +1488,8 @@
 
     <!-- YouTube IFrame API -->
     <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- OptionWheel Component -->
+    <script type="module" src="OptionWheel.js"></script>
     <!-- Core JS -->
     <script type="module" src="app.js"></script>
 </body>
