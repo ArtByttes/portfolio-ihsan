@@ -1460,6 +1460,8 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
 
 .about-actions {
     margin-top: 16px;
+    display: flex;
+    justify-content: center;
 }
 
 /* ----------------------------------
