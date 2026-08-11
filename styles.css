@@ -551,6 +551,12 @@ body.light-theme .icon-moon {
     letter-spacing: -1.5px;
 }
 
+.hero-title .gradient-text {
+    font-size: clamp(48px, 8vw, 80px);
+    line-height: 1.1;
+    display: inline-block;
+}
+
 .hero-subtitle {
     font-size: clamp(12px, 1.4vw, 14px);
     color: var(--text-secondary);
