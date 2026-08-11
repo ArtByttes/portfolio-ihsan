@@ -1218,12 +1218,42 @@
                 <div class="about-grid">
                     <!-- Asymmetrical Layout: Left Column (40%) -->
                     <div class="about-image-column">
-                        <div class="about-image-wrapper">
-                            <img src="profile.svg" alt="Ihsan Salleh Portrait" class="about-img" loading="lazy">
-                            <div class="about-experience-badge">
-                                <span class="exp-num">9</span>
-                                <span class="exp-text">Tahun<br>Pengalaman</span>
+                        <div class="coverflow-container">
+                            <div class="coverflow-track" id="coverflow-track">
+                                <div class="coverflow-item" data-index="0">
+                                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Sunset Beach" class="coverflow-img">
+                                    <div class="coverflow-title">Sunset Beach</div>
+                                </div>
+                                <div class="coverflow-item" data-index="1">
+                                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" alt="Misty Mountains" class="coverflow-img">
+                                    <div class="coverflow-title">Misty Mountains</div>
+                                </div>
+                                <div class="coverflow-item" data-index="2">
+                                    <img src="profile.svg" alt="Ihsan Salleh Portrait" class="coverflow-img">
+                                    <div class="coverflow-title">Ihsan Salleh</div>
+                                </div>
+                                <div class="coverflow-item" data-index="3">
+                                    <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&q=80" alt="Forest Trail" class="coverflow-img">
+                                    <div class="coverflow-title">Forest Trail</div>
+                                </div>
+                                <div class="coverflow-item" data-index="4">
+                                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80" alt="Sunlight Woods" class="coverflow-img">
+                                    <div class="coverflow-title">Sunlight Woods</div>
+                                </div>
                             </div>
+                            <div class="coverflow-nav">
+                                <button class="coverflow-btn coverflow-prev" aria-label="Previous">
+                                    <i data-lucide="chevron-left"></i>
+                                </button>
+                                <div class="coverflow-dots" id="coverflow-dots"></div>
+                                <button class="coverflow-btn coverflow-next" aria-label="Next">
+                                    <i data-lucide="chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="about-experience-badge coverflow-badge">
+                            <span class="exp-num">9</span>
+                            <span class="exp-text">Tahun<br>Pengalaman</span>
                         </div>
                     </div>
 

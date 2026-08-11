@@ -1207,6 +1207,97 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ---------------------------------------------------------
+    // 9.5 COVERFLOW (ABOUT SECTION)
+    // ---------------------------------------------------------
+    const coverflowTrack = document.getElementById('coverflow-track');
+    const coverflowDots = document.getElementById('coverflow-dots');
+
+    if (coverflowTrack && coverflowDots) {
+        const items = coverflowTrack.querySelectorAll('.coverflow-item');
+        const itemCount = items.length;
+        let activeIndex = 2; // Start with middle item (profile)
+
+        // Create dots
+        items.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.className = 'coverflow-dot';
+            if (i === activeIndex) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            coverflowDots.appendChild(dot);
+        });
+
+        const dots = coverflowDots.querySelectorAll('.coverflow-dot');
+
+        function updateCoverflow() {
+            items.forEach((item, i) => {
+                const offset = i - activeIndex;
+                const absOffset = Math.abs(offset);
+                const isActive = i === activeIndex;
+                const isPast = i < activeIndex;
+
+                // Calculate transforms
+                const x = offset * 40;
+                const rotateY = isActive ? 0 : (isPast ? 40 : -40);
+                const z = isActive ? 60 : -absOffset * 60;
+                const scale = isActive ? 1.15 : 1 - (absOffset * 0.1);
+                const opacity = absOffset > 2 ? 0 : 1 - (absOffset * 0.3);
+
+                item.style.transform = `translateX(${x}px) translateZ(${z}px) rotateY(${rotateY}deg) scale(${scale})`;
+                item.style.opacity = opacity;
+                item.style.zIndex = 100 - absOffset;
+
+                if (isActive) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                if (i === activeIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function goToSlide(index) {
+            activeIndex = Math.max(0, Math.min(itemCount - 1, index));
+            updateCoverflow();
+        }
+
+        function nextSlide() {
+            goToSlide(activeIndex + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(activeIndex - 1);
+        }
+
+        // Button events
+        const prevBtn = document.querySelector('.coverflow-prev');
+        const nextBtn = document.querySelector('.coverflow-next');
+
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+        // Item click events
+        items.forEach((item, i) => {
+            item.addEventListener('click', () => goToSlide(i));
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+
+        // Initialize
+        updateCoverflow();
+    }
+
+    // ---------------------------------------------------------
     // 10. BACKGROUND MUSIC TOGGLE LOGIC
     // ---------------------------------------------------------
     const bgMusicBtn = document.getElementById('bg-music-toggle');

@@ -1456,6 +1456,141 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
 }
 
 /* ----------------------------------
+   11.5. COVERFLOW (ABOUT SECTION)
+   ---------------------------------- */
+.coverflow-container {
+    width: 100%;
+    max-width: 380px;
+    height: 320px;
+    position: relative;
+    perspective: 1000px;
+    margin-bottom: 40px;
+}
+
+.coverflow-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.coverflow-item {
+    position: absolute;
+    width: 120px;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.coverflow-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+}
+
+.coverflow-item:hover .coverflow-img {
+    transform: scale(1.05);
+}
+
+.coverflow-title {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.coverflow-item.active .coverflow-title {
+    opacity: 1;
+}
+
+.coverflow-item.active {
+    z-index: 100;
+}
+
+.coverflow-item.active .coverflow-img {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.coverflow-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 40px;
+    padding: 8px 16px;
+    background: var(--bg-glass-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.coverflow-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.coverflow-btn:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.coverflow-btn i {
+    width: 16px;
+    height: 16px;
+}
+
+.coverflow-dots {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.coverflow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.coverflow-dot.active {
+    width: 20px;
+    border-radius: 3px;
+    background: var(--text-primary);
+}
+
+.coverflow-badge {
+    position: absolute;
+    bottom: -24px;
+    right: -24px;
+    z-index: 101;
+}
+
+/* ----------------------------------
    12. SECTION 7: PRICING TABLE
    ---------------------------------- */
 .pricing-section {
