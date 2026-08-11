@@ -1215,7 +1215,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (coverflowTrack && coverflowDots) {
         const items = coverflowTrack.querySelectorAll('.coverflow-item');
         const itemCount = items.length;
-        let activeIndex = 2; // Start with middle item (profile)
+        let activeIndex = 0; // Start with first item (Portrait Photographer)
 
         // Create dots
         items.forEach((_, i) => {
