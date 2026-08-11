@@ -1462,6 +1462,7 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
     margin-top: 16px;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 /* ----------------------------------
