@@ -1236,11 +1236,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const isPast = i < activeIndex;
 
                 // Calculate transforms
-                const x = offset * 40;
+                const x = offset * 60;
                 const rotateY = isActive ? 0 : (isPast ? 40 : -40);
-                const z = isActive ? 60 : -absOffset * 60;
-                const scale = isActive ? 1.15 : 1 - (absOffset * 0.1);
-                const opacity = absOffset > 2 ? 0 : 1 - (absOffset * 0.3);
+                const z = isActive ? 80 : -absOffset * 80;
+                const scale = isActive ? 1.2 : 1 - (absOffset * 0.12);
+                const opacity = absOffset > 2 ? 0 : 1 - (absOffset * 0.35);
 
                 item.style.transform = `translateX(${x}px) translateZ(${z}px) rotateY(${rotateY}deg) scale(${scale})`;
                 item.style.opacity = opacity;

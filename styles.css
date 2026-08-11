@@ -1460,23 +1460,26 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
    ---------------------------------- */
 .coverflow-container {
     width: 100%;
-    max-width: 380px;
-    height: 320px;
+    max-width: 500px;
+    height: 420px;
     position: relative;
-    perspective: 1000px;
-    margin-bottom: 40px;
+    perspective: 1200px;
+    margin-bottom: 20px;
 }
 
 .coverflow-track {
     width: 100%;
-    height: 100%;
+    height: 340px;
     position: relative;
     transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .coverflow-item {
     position: absolute;
-    width: 120px;
+    width: 180px;
     aspect-ratio: 3/4;
     cursor: pointer;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1487,22 +1490,22 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 16px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease;
 }
 
 .coverflow-item:hover .coverflow-img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .coverflow-title {
     position: absolute;
-    bottom: -30px;
+    bottom: -32px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--text-secondary);
     white-space: nowrap;
@@ -1519,16 +1522,16 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
 }
 
 .coverflow-item.active .coverflow-img {
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
 }
 
 .coverflow-nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    margin-top: 40px;
-    padding: 8px 16px;
+    gap: 20px;
+    margin-top: 24px;
+    padding: 10px 20px;
     background: var(--bg-glass-card);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-color);
@@ -1539,8 +1542,8 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
 }
 
 .coverflow-btn {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     border: none;
     background: transparent;
@@ -1555,22 +1558,23 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
 .coverflow-btn:hover {
     background: var(--bg-tertiary);
     color: var(--text-primary);
+    transform: scale(1.1);
 }
 
 .coverflow-btn i {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
 }
 
 .coverflow-dots {
     display: flex;
-    gap: 6px;
+    gap: 8px;
     align-items: center;
 }
 
 .coverflow-dot {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: var(--text-muted);
     cursor: pointer;
@@ -1578,9 +1582,13 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
 }
 
 .coverflow-dot.active {
-    width: 20px;
-    border-radius: 3px;
+    width: 24px;
+    border-radius: 4px;
     background: var(--text-primary);
+}
+
+.coverflow-dot:hover {
+    background: var(--text-secondary);
 }
 
 .coverflow-badge {
