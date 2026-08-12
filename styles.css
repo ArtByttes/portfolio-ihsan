@@ -103,12 +103,48 @@ body {
     line-height: 1.6;
     overflow-x: clip;
     transition: background-color var(--transition-slow), color var(--transition-slow);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 img, video {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+/* Performance: reduce heavy animations on mobile */
+@media (max-width: 768px) {
+    .hero-bg-video {
+        transform: none !important;
+        will-change: auto !important;
+    }
+
+    .portfolio-card {
+        transition: none !important;
+    }
+
+    .portfolio-card:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .card-img,
+    .card-video {
+        transition: none !important;
+    }
+
+    .service-card,
+    .stat-card,
+    .pricing-card {
+        transition: none !important;
+    }
+
+    .service-card:hover,
+    .stat-card:hover,
+    .pricing-card:hover {
+        transform: none !important;
+    }
 }
 
 ul {
@@ -579,8 +615,8 @@ body.light-theme .icon-moon {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100dvh;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -598,6 +634,7 @@ body.light-theme .icon-moon {
     z-index: 2;
     width: 100%;
     margin-top: var(--header-height);
+    padding: 0 24px;
 }
 
 .hero-content-narrow {
@@ -616,10 +653,18 @@ body.light-theme .icon-moon {
     line-height: 1.1;
 }
 
+.hero-title .gradient-text {
+    font-size: clamp(48px, 8vw, 80px);
+    line-height: 1.1;
+    display: inline-block;
+}
+
 .hero-subtitle-light {
     color: rgba(255, 255, 255, 0.9);
     margin-top: 0;
     margin-bottom: 24px;
+    font-size: clamp(14px, 2vw, 18px);
+    max-width: 500px;
 }
 
 .typing-cursor {
@@ -1494,6 +1539,16 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
     cursor: pointer;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Mobile coverflow - simpler, lighter */
+@media (max-width: 768px) {
+    .coverflow-item {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
 }
 
 .coverflow-img {
@@ -2650,6 +2705,278 @@ body.light-theme .input-wrapper textarea:focus {
     }
 }
 
+/* ============================================
+   MOBILE HERO FIXES (All Phones)
+   ============================================ */
+@media (max-width: 768px) {
+    /* Hero section mobile */
+    .hero-section-full {
+        min-height: 100svh; /* Use svh for mobile browser compat */
+        padding-top: var(--header-shrink-height);
+    }
+
+    .hero-video {
+        width: 100%;
+        height: 100%;
+        min-height: 100svh;
+    }
+
+    .hero-container-overlay {
+        margin-top: 0;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(100svh - var(--header-shrink-height));
+    }
+
+    .hero-content-narrow {
+        max-width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-title-light {
+        font-size: clamp(28px, 7vw, 40px);
+        text-align: center;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+
+    .hero-title .gradient-text {
+        font-size: clamp(36px, 9vw, 56px);
+        line-height: 1.15;
+        display: inline-block;
+    }
+
+    .hero-subtitle-light {
+        font-size: clamp(14px, 3.5vw, 16px);
+        text-align: center;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-badge-light {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    /* CoverFlow mobile */
+    .coverflow-container {
+        max-width: 100%;
+        height: 320px;
+        padding: 0 10px;
+    }
+
+    .coverflow-track {
+        height: 240px;
+    }
+
+    .coverflow-item {
+        width: 140px;
+    }
+
+    .coverflow-title {
+        font-size: 12px;
+        bottom: -28px;
+    }
+
+    .coverflow-nav {
+        gap: 16px;
+        padding: 8px 16px;
+        margin-top: 20px;
+    }
+
+    .coverflow-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .coverflow-btn i {
+        width: 16px;
+        height: 16px;
+    }
+
+    .coverflow-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .coverflow-dot.active {
+        width: 20px;
+    }
+
+    /* About section mobile */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-image-column {
+        order: -1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-content-column {
+        text-align: center;
+        align-items: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    /* Portfolio wheel mobile */
+    .portfolio-wheel-side {
+        height: 300px;
+    }
+
+    #portfolio-wheel-container {
+        height: 300px;
+    }
+
+    .option-wheel {
+        height: 300px !important;
+    }
+
+    .option-wheel__item,
+    .option-wheel--right .option-wheel__item {
+        font-size: 2.5rem !important;
+        top: 25% !important;
+    }
+}
+
+/* iPhone 11 Pro (375px), iPhone 13 (390px) */
+@media (max-width: 430px) {
+    .hero-title-light {
+        font-size: clamp(26px, 6.5vw, 36px);
+    }
+
+    .hero-title .gradient-text {
+        font-size: clamp(32px, 8.5vw, 48px);
+    }
+
+    .hero-subtitle-light {
+        font-size: clamp(13px, 3vw, 15px);
+        max-width: 300px;
+    }
+
+    .coverflow-container {
+        height: 300px;
+    }
+
+    .coverflow-track {
+        height: 220px;
+    }
+
+    .coverflow-item {
+        width: 130px;
+    }
+
+    /* Portfolio wheel smaller on small phones */
+    .option-wheel__item,
+    .option-wheel--right .option-wheel__item {
+        font-size: 2.2rem !important;
+    }
+}
+
+/* iPhone SE / very small (320px-375px) */
+@media (max-width: 375px) {
+    .hero-title-light {
+        font-size: 24px;
+    }
+
+    .hero-title .gradient-text {
+        font-size: 30px;
+    }
+
+    .hero-subtitle-light {
+        font-size: 13px;
+        max-width: 280px;
+    }
+
+    .coverflow-container {
+        height: 280px;
+    }
+
+    .coverflow-track {
+        height: 200px;
+    }
+
+    .coverflow-item {
+        width: 110px;
+    }
+
+    .coverflow-title {
+        font-size: 11px;
+    }
+}
+
+/* Landscape phone (horizontal) */
+@media (max-height: 500px) and (max-width: 900px) {
+    .hero-section-full {
+        min-height: 100svh;
+    }
+
+    .hero-container-overlay {
+        padding: 0 16px;
+    }
+
+    .hero-title-light {
+        font-size: 22px;
+    }
+
+    .hero-title .gradient-text {
+        font-size: 28px;
+    }
+
+    .hero-subtitle-light {
+        font-size: 12px;
+        margin-bottom: 16px;
+    }
+
+    .hero-badge-light {
+        font-size: 11px;
+        padding: 4px 8px;
+        margin-bottom: 12px;
+    }
+
+    .coverflow-container {
+        height: 260px;
+        max-width: 100%;
+    }
+
+    .coverflow-track {
+        height: 180px;
+    }
+
+    .coverflow-item {
+        width: 100px;
+    }
+
+    .coverflow-nav {
+        margin-top: 16px;
+        padding: 6px 14px;
+        gap: 12px;
+    }
+
+    .coverflow-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .bg-music-toggle {
+        bottom: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
 /* Very small screens (Max 320px) */
 @media (max-width: 320px) {
     body {
@@ -2813,6 +3140,15 @@ body.light-theme .input-wrapper textarea:focus {
     transition: opacity 1s ease-in-out, transform 0.25s ease-out;
     transform: scale(1.12) translate(var(--px, 0px), var(--py, 0px));
     will-change: transform;
+}
+
+/* Disable parallax on mobile for performance */
+@media (max-width: 768px) {
+    .hero-bg-video {
+        transform: scale(1.05) !important;
+        will-change: auto !important;
+        transition: opacity 1s ease-in-out !important;
+    }
 }
 body.dark-theme .light-video {
     opacity: 0;

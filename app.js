@@ -1235,12 +1235,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 const isActive = i === activeIndex;
                 const isPast = i < activeIndex;
 
-                // Calculate transforms
-                const x = offset * 80;
-                const rotateY = isActive ? 0 : (isPast ? 40 : -40);
-                const z = isActive ? 100 : -absOffset * 100;
-                const scale = isActive ? 1.25 : 1 - (absOffset * 0.15);
-                const opacity = absOffset > 2 ? 0 : 1 - (absOffset * 0.4);
+                // Calculate transforms - adjust for mobile
+                const isMobile = window.innerWidth <= 768;
+                const spacing = isMobile ? 50 : 80;
+                const zDepth = isMobile ? 60 : 100;
+                const activeScale = isMobile ? 1.15 : 1.25;
+                const offsetReduction = isMobile ? 0.1 : 0.15;
+                const fadeRate = isMobile ? 0.3 : 0.4;
+
+                const x = offset * spacing;
+                const rotateY = isActive ? 0 : (isPast ? (isMobile ? 25 : 40) : (isMobile ? -25 : -40));
+                const z = isActive ? zDepth : -absOffset * zDepth;
+                const scale = isActive ? activeScale : 1 - (absOffset * offsetReduction);
+                const opacity = absOffset > 2 ? 0 : 1 - (absOffset * fadeRate);
 
                 item.style.transform = `translateX(${x}px) translateZ(${z}px) rotateY(${rotateY}deg) scale(${scale})`;
                 item.style.opacity = opacity;
