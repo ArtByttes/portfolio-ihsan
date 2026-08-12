@@ -2951,9 +2951,10 @@ body.light-theme .input-wrapper textarea:focus {
         font-size: 12px;
         margin-bottom: 16px;
         text-align: left;
-        max-width: 100%;
+        max-width: 280px;
         margin-left: 0;
         margin-right: 0;
+        line-height: 1.6;
     }
 
     .hero-badge-light {
@@ -3015,6 +3016,56 @@ body.light-theme .input-wrapper textarea:focus {
         right: 16px;
         width: 40px;
         height: 40px;
+    }
+
+    /* Portfolio cards - fit landscape screen */
+    .portfolio-card {
+        flex: 0 0 65%;
+        max-width: 500px;
+    }
+
+    .card-media {
+        aspect-ratio: 16 / 9;
+    }
+
+    .card-info {
+        padding: 16px;
+    }
+
+    .card-project-title {
+        font-size: 16px;
+    }
+
+    .card-description {
+        font-size: 13px;
+    }
+
+    .project-meta {
+        font-size: 12px;
+    }
+
+    /* Portfolio layout landscape */
+    .portfolio-layout {
+        grid-template-columns: 200px 1fr;
+        gap: 12px;
+    }
+
+    .portfolio-wheel-side {
+        height: 250px;
+    }
+
+    #portfolio-wheel-container {
+        height: 250px;
+    }
+
+    .option-wheel {
+        height: 250px !important;
+    }
+
+    .option-wheel__item,
+    .option-wheel--right .option-wheel__item {
+        font-size: 2rem !important;
+        top: 20% !important;
     }
 }
 
