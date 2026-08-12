@@ -2923,20 +2923,37 @@ body.light-theme .input-wrapper textarea:focus {
     }
 
     .hero-container-overlay {
-        padding: 0 16px;
+        padding: 0 32px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .hero-content-narrow {
+        max-width: 55%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .hero-title-light {
         font-size: 22px;
+        text-align: left;
     }
 
     .hero-title .gradient-text {
         font-size: 28px;
+        line-height: 1.1;
     }
 
     .hero-subtitle-light {
         font-size: 12px;
         margin-bottom: 16px;
+        text-align: left;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .hero-badge-light {
@@ -2945,28 +2962,52 @@ body.light-theme .input-wrapper textarea:focus {
         margin-bottom: 12px;
     }
 
+    .hero-actions {
+        justify-content: flex-start;
+    }
+
+    /* CoverFlow landscape - bigger items */
     .coverflow-container {
-        height: 260px;
+        height: 340px;
         max-width: 100%;
     }
 
     .coverflow-track {
-        height: 180px;
+        height: 260px;
     }
 
     .coverflow-item {
-        width: 100px;
+        width: 160px;
+    }
+
+    .coverflow-title {
+        font-size: 12px;
+        bottom: -28px;
     }
 
     .coverflow-nav {
         margin-top: 16px;
-        padding: 6px 14px;
-        gap: 12px;
+        padding: 8px 16px;
+        gap: 14px;
     }
 
     .coverflow-btn {
-        width: 32px;
-        height: 32px;
+        width: 34px;
+        height: 34px;
+    }
+
+    .coverflow-btn i {
+        width: 16px;
+        height: 16px;
+    }
+
+    .coverflow-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .coverflow-dot.active {
+        width: 22px;
     }
 
     .bg-music-toggle {
