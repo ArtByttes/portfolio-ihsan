@@ -3018,10 +3018,11 @@ body.light-theme .input-wrapper textarea:focus {
         height: 40px;
     }
 
-    /* Portfolio cards - fit landscape screen */
+    /* Portfolio cards - 1 card per view, swipe friendly */
     .portfolio-card {
-        flex: 0 0 65%;
-        max-width: 500px;
+        flex: 0 0 100%;
+        max-width: 100%;
+        scroll-snap-align: center;
     }
 
     .card-media {
@@ -3042,6 +3043,14 @@ body.light-theme .input-wrapper textarea:focus {
 
     .project-meta {
         font-size: 12px;
+    }
+
+    /* Portfolio grid - swipeable */
+    .portfolio-grid {
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 16px;
+        padding: 10px 16px 20px 16px;
     }
 
     /* Portfolio layout landscape */
@@ -3066,6 +3075,11 @@ body.light-theme .input-wrapper textarea:focus {
     .option-wheel--right .option-wheel__item {
         font-size: 2rem !important;
         top: 20% !important;
+    }
+
+    /* Hide carousel buttons on landscape phone - use swipe */
+    .carousel-btn {
+        display: none;
     }
 }
 
