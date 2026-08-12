@@ -1237,11 +1237,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Calculate transforms - adjust for mobile
                 const isMobile = window.innerWidth <= 768;
-                const spacing = isMobile ? 50 : 80;
-                const zDepth = isMobile ? 60 : 100;
-                const activeScale = isMobile ? 1.15 : 1.25;
-                const offsetReduction = isMobile ? 0.1 : 0.15;
-                const fadeRate = isMobile ? 0.3 : 0.4;
+                const isLandscape = window.innerHeight <= 500 && window.innerWidth <= 900;
+                const spacing = isLandscape ? 55 : (isMobile ? 50 : 80);
+                const zDepth = isLandscape ? 70 : (isMobile ? 60 : 100);
+                const activeScale = isLandscape ? 1.18 : (isMobile ? 1.15 : 1.25);
+                const offsetReduction = isLandscape ? 0.1 : (isMobile ? 0.1 : 0.15);
+                const fadeRate = isLandscape ? 0.3 : (isMobile ? 0.3 : 0.4);
 
                 const x = offset * spacing;
                 const rotateY = isActive ? 0 : (isPast ? (isMobile ? 25 : 40) : (isMobile ? -25 : -40));
