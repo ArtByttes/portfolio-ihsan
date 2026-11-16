@@ -3016,6 +3016,70 @@ body.light-theme .input-wrapper textarea:focus {
         width: 40px;
         height: 40px;
     }
+
+    /* Portfolio cards - 1 card per view, swipe friendly */
+    .portfolio-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+        scroll-snap-align: center;
+    }
+
+    .card-media {
+        aspect-ratio: 16 / 9;
+    }
+
+    .card-info {
+        padding: 16px;
+    }
+
+    .card-project-title {
+        font-size: 16px;
+    }
+
+    .card-description {
+        font-size: 13px;
+    }
+
+    .project-meta {
+        font-size: 12px;
+    }
+
+    /* Portfolio grid - swipeable */
+    .portfolio-grid {
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 16px;
+        padding: 10px 16px 20px 16px;
+    }
+
+    /* Portfolio layout landscape */
+    .portfolio-layout {
+        grid-template-columns: 200px 1fr;
+        gap: 12px;
+    }
+
+    .portfolio-wheel-side {
+        height: 250px;
+    }
+
+    #portfolio-wheel-container {
+        height: 250px;
+    }
+
+    .option-wheel {
+        height: 250px !important;
+    }
+
+    .option-wheel__item,
+    .option-wheel--right .option-wheel__item {
+        font-size: 2rem !important;
+        top: 20% !important;
+    }
+
+    /* Hide carousel buttons on landscape phone - use swipe */
+    .carousel-btn {
+        display: none;
+    }
 }
 
 /* Very small screens (Max 320px) */
