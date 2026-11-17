@@ -135,14 +135,12 @@ img, video {
     }
 
     .service-card,
-    .stat-card,
-    .pricing-card {
+    .stat-card {
         transition: none !important;
     }
 
     .service-card:hover,
-    .stat-card:hover,
-    .pricing-card:hover {
+    .stat-card:hover {
         transform: none !important;
     }
 }
@@ -784,7 +782,7 @@ body.light-theme .icon-moon {
 /* Stats counter grid */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
 }
 
@@ -1443,7 +1441,7 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
     position: relative;
     background-color: var(--bg-tertiary);
     border: 1px solid var(--border-color);
-    padding: 10px 52px 10px 20px;
+    padding: 10px 20px;
     border-radius: 50px;
     font-size: 14px;
     font-weight: 600;
@@ -1656,123 +1654,11 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
     background: var(--text-secondary);
 }
 
-/* ----------------------------------
-   12. SECTION 7: PRICING TABLE
-   ---------------------------------- */
-.pricing-section {
-    padding: 100px 0;
-}
-
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.pricing-card {
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-lg);
-    padding: 48px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    transition: all var(--transition-normal);
-}
-
-.pricing-card.featured {
-    border: 2px solid var(--accent-gold);
-    box-shadow: var(--card-shadow);
-}
-
-.featured-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(135deg, var(--accent-gold), var(--accent-cyan));
-    color: #ffffff;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 6px 14px;
-    border-radius: 50px;
-    letter-spacing: 1px;
-    white-space: nowrap;
-}
-
-.pricing-card:hover {
-    transform: translateY(-6px);
-}
-
-.pricing-header {
-    margin-bottom: 32px;
-}
-
-.pricing-package-title {
-    font-size: 24px;
-    margin-bottom: 12px;
-}
-
-.pricing-desc {
-    color: var(--text-secondary);
+.section-caps {
+    margin-top: 10px;
     font-size: 14px;
-    line-height: 1.5;
-}
-
-.pricing-features-list {
-    flex-grow: 1;
-    margin-bottom: 40px;
-}
-
-.pricing-features-list ul {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.pricing-features-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 15px;
+    letter-spacing: 0.02em;
     color: var(--text-secondary);
-    line-height: 1.4;
-}
-
-.pricing-features-list .check-icon {
-    width: 20px;
-    height: 20px;
-    color: var(--accent-gold);
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-.pricing-card.featured .pricing-features-list .check-icon {
-    color: var(--accent-cyan);
-}
-
-.pricing-disclaimer {
-    margin-top: 48px;
-}
-
-.pricing-disclaimer p {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-secondary);
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-size: 14px;
-}
-
-.pricing-disclaimer i {
-    width: 18px;
-    height: 18px;
-    color: var(--accent-gold);
 }
 
 /* ----------------------------------
@@ -1866,86 +1752,7 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
 }
 
 /* ----------------------------------
-   14. SECTION 9: FAQ ACCORDION
-   ---------------------------------- */
-.faq-section {
-    padding: 100px 0;
-}
-
-.faq-accordion {
-    max-width: 750px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.faq-item {
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-md);
-    overflow: hidden;
-    transition: border-color var(--transition-normal);
-}
-
-.faq-item:hover {
-    border-color: var(--border-color-hover);
-}
-
-.faq-trigger {
-    width: 100%;
-    padding: 24px 32px;
-    background: transparent;
-    border: none;
-    outline: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    text-align: left;
-    color: var(--text-primary);
-    font-family: var(--font-heading);
-    font-size: 18px;
-    font-weight: 700;
-    transition: color var(--transition-fast);
-}
-
-.faq-trigger:hover {
-    color: var(--accent-gold);
-}
-
-.accordion-chevron {
-    width: 20px;
-    height: 20px;
-    color: var(--text-secondary);
-    transition: transform var(--transition-normal);
-}
-
-/* Expand state */
-.faq-item.active {
-    border-color: var(--border-color-hover);
-}
-
-.faq-item.active .accordion-chevron {
-    transform: rotate(180deg);
-    color: var(--accent-gold);
-}
-
-.faq-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height var(--transition-normal) ease-out;
-}
-
-.faq-content p {
-    padding: 0 32px 24px;
-    color: var(--text-secondary);
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-/* ----------------------------------
-   15. SECTION 10: CONTACT & FORM
+   15. SECTION 9: CONTACT
    ---------------------------------- */
 .contact-section {
     padding: 100px 0;
@@ -1953,214 +1760,59 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
     border-top: 1px solid var(--border-color);
 }
 
-.contact-wrapper {
+.contact-band {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+    gap: 64px;
+    align-items: end;
 }
 
 .contact-intro-text {
     font-size: 17px;
     color: var(--text-secondary);
-    margin-bottom: 40px;
+    max-width: 56ch;
+    margin-bottom: 0;
 }
 
-.contact-details {
+.contact-band-actions {
     display: flex;
     flex-direction: column;
-    gap: 32px;
-}
-
-.contact-detail-item {
-    display: flex;
-    gap: 20px;
     align-items: flex-start;
+    gap: 14px;
 }
 
-.detail-icon {
-    width: 48px;
-    height: 48px;
-    background-color: var(--bg-tertiary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent-gold);
-}
-
-.detail-icon i {
-    width: 22px;
-    height: 22px;
-}
-
-.detail-label {
-    display: block;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-}
-
-.detail-link {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.detail-link:hover {
-    color: var(--accent-cyan);
-}
-
-/* Form Styling */
-.contact-form {
-    background-color: var(--bg-primary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-lg);
-    padding: 40px;
-    box-shadow: var(--shadow-soft);
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form-group label {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.input-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.input-icon {
-    position: absolute;
-    left: 16px;
-    width: 18px;
-    height: 18px;
-    color: var(--text-muted);
-    pointer-events: none;
-    transition: color var(--transition-fast);
-}
-
-.input-wrapper input,
-.input-wrapper select,
-.input-wrapper textarea {
-    width: 100%;
-    padding: 14px 16px 14px 48px;
-    background-color: var(--input-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-sm);
-    color: var(--text-primary);
-    font-family: var(--font-body);
-    font-size: 15px;
-    outline: none;
-    transition: all var(--transition-normal);
-}
-
-.input-wrapper textarea {
-    padding-left: 20px; /* Textarea does not use absolute left icon */
-}
-
-/* Focus States */
-.input-wrapper input:focus,
-.input-wrapper select:focus,
-.input-wrapper textarea:focus {
-    border-color: var(--input-focus-border);
-    box-shadow: 0 0 0 4px rgba(var(--accent-cyan-rgb), 0.1);
-    background-color: var(--bg-secondary);
-}
-
-body.light-theme .input-wrapper input:focus,
-body.light-theme .input-wrapper select:focus,
-body.light-theme .input-wrapper textarea:focus {
-    box-shadow: 0 0 0 4px rgba(var(--accent-gold-rgb), 0.1);
-}
-
-.input-wrapper input:focus + .input-icon {
-    color: var(--input-focus-border);
-}
-
-/* Validation Style */
-.form-group.error input,
-.form-group.error select,
-.form-group.error textarea {
-    border-color: #ef4444;
-}
-
-.form-group.error input:focus,
-.form-group.error select:focus,
-.form-group.error textarea:focus {
-    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
-}
-
-.error-msg {
-    display: none;
-    font-size: 12px;
-    color: #ef4444;
-    font-weight: 500;
-}
-
-.form-group.error .error-msg {
-    display: block;
-}
-
-/* Success Box */
-.form-success-box {
-    display: none;
-    align-items: flex-start;
-    gap: 16px;
-    background-color: var(--success-bg);
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    border-radius: var(--border-radius-sm);
-    padding: 20px;
-    color: var(--success-text);
-}
-
-.form-success-box.show {
-    display: flex;
-    animation: slideDown 0.3s forwards ease;
-}
-
-.success-icon {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-}
-
-.form-success-box h4 {
-    color: var(--success-text);
+.contact-band-cta {
+    padding: 16px 32px;
     font-size: 16px;
-    margin-bottom: 4px;
 }
 
-.form-success-box p {
+.contact-band-hint {
     font-size: 14px;
     color: var(--text-secondary);
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.contact-band-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 15px;
+}
+
+.contact-band-link {
+    color: var(--text-secondary);
+    border-bottom: 1px solid transparent;
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.contact-band-link:hover {
+    color: var(--accent-gold);
+    border-bottom-color: var(--accent-gold);
+}
+
+.contact-band-sep {
+    color: var(--text-muted);
 }
 
 /* ----------------------------------
@@ -2345,10 +1997,6 @@ body.light-theme .input-wrapper textarea:focus {
     
     .services-grid {
         gap: 20px;
-    }
-    
-    .pricing-grid {
-        padding: 0 24px;
     }
 
     .portfolio-layout {
@@ -2548,41 +2196,7 @@ body.light-theme .input-wrapper textarea:focus {
     .exp-num {
         font-size: 32px;
     }
-    
-    /* Pricing grid layout */
-    .pricing-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        padding: 0;
-    }
-    
-    .pricing-card {
-        padding: 32px;
-        text-align: center;
-    }
 
-    .pricing-card.featured {
-        position: relative;
-    }
-
-    .featured-badge {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-        display: inline-block;
-        margin-bottom: 16px;
-    }
-
-    .pricing-card .btn {
-        justify-content: center;
-    }
-
-    .pricing-features-list ul {
-        display: inline-block;
-        text-align: left;
-    }
-    
     /* Testimonial block layout */
     .testimonial-card {
         padding: 40px 24px 32px;
@@ -2592,35 +2206,20 @@ body.light-theme .input-wrapper textarea:focus {
         left: 50%;
         transform: translateX(-50%);
     }
-    
-    /* FAQ triggers */
-    .faq-trigger {
-        padding: 20px 24px;
-        font-size: 16px;
-    }
-    
-    .faq-content p {
-        padding: 0 24px 20px;
-    }
-    
-    /* Contact wrapper layout */
-    .contact-wrapper {
+
+    /* Contact band layout */
+    .contact-band {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: 32px;
+        align-items: start;
     }
 
-    .contact-info-column {
-        text-align: center;
+    .contact-band-actions {
+        align-items: stretch;
     }
 
-    .contact-info-column .contact-details {
-        align-items: center;
-    }
-
-    .contact-form {
-        padding: 24px;
-        max-width: 480px;
-        margin: 0 auto;
+    .contact-band-cta {
+        justify-content: center;
         width: 100%;
     }
 
@@ -2637,15 +2236,6 @@ body.light-theme .input-wrapper textarea:focus {
         justify-content: center;
     }
 
-    /* FAQ centering */
-    .faq-section .section-intro {
-        text-align: center;
-    }
-
-    .faq-accordion {
-        max-width: 100%;
-    }
-
     /* Portfolio section centering */
     .portfolio-section .section-intro {
         text-align: center;
@@ -2653,11 +2243,6 @@ body.light-theme .input-wrapper textarea:focus {
 
     /* Workflow section centering */
     .workflow-section .section-intro {
-        text-align: center;
-    }
-
-    /* Pricing section centering */
-    .pricing-section .section-intro {
         text-align: center;
     }
 
@@ -2696,12 +2281,6 @@ body.light-theme .input-wrapper textarea:focus {
     
     .logo-full {
         display: none; /* Hide full text logo on very small screens */
-    }
-    
-    .pricing-disclaimer p {
-        flex-direction: column;
-        border-radius: var(--border-radius-md);
-        text-align: center;
     }
 }
 
@@ -3135,24 +2714,12 @@ body.light-theme .input-wrapper textarea:focus {
     .portfolio-modal-container {
         width: 98%;
     }
-    
-    .faq-trigger {
-        padding: 16px 20px;
-        font-size: 14px;
+
+    .contact-band-cta {
+        padding: 14px 20px;
+        font-size: 15px;
     }
-    
-    .contact-form {
-        padding: 16px;
-        max-width: 100%;
-    }
-    
-    .input-wrapper input,
-    .input-wrapper select,
-    .input-wrapper textarea {
-        padding: 12px 12px 12px 40px;
-        font-size: 14px;
-    }
-    
+
     .testimonial-card {
         padding: 32px 16px 24px;
     }
@@ -3160,11 +2727,7 @@ body.light-theme .input-wrapper textarea:focus {
     .testimonial-card blockquote {
         font-size: 14px;
     }
-    
-    .pricing-card {
-        padding: 24px;
-    }
-    
+
     .about-image-wrapper {
         max-width: 240px;
     }

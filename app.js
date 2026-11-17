@@ -191,37 +191,38 @@ document.addEventListener('DOMContentLoaded', () => {
             'nav-portfolio': 'Portfolio',
             'nav-about': 'Tentang Saya',
             'nav-contact': 'Hubungi',
-            'hero-subtitle': 'Videographer & Multimedia<br>Specialist yang berpengalaman',
-            'hero-badge': 'Videographer / Editor / Freelance',
-            'hero-cta': 'Hire Me!',
-            'trust-title': 'Kualitas Visual yang Diakui oleh Industri Media Nasional',
-            'award-title': 'Pemenang Berita Video Terbaik',
+            'hero-subtitle': 'Videografer & Pakar Multimedia<br>yang berpengalaman',
+            'hero-badge': 'Videografer / Editor / Freelance',
+            'hero-cta': 'Tempah Saya',
+            'trust-title': 'Kualiti Visual yang Diiktiraf oleh Industri Media Nasional',
+            'award-title': 'Second Cameraman, Pasukan Pemenang Berita Video Terbaik',
             'award-event': 'Anugerah Malam Wartawan Malaysia (MPI Petronas 2020)',
-            'award-desc': 'Melalui karya dokumentari bertajuk <strong>"Kita Mesti Menang"</strong>, menonjolkan kualiti jurnalisme visual berimpak tinggi.',
+            'award-desc': 'Karya dokumentari <strong>"Kita Mesti Menang"</strong> menonjolkan kualiti jurnalisme visual berimpak tinggi.',
             'stat-exp': 'Tahun Pengalaman',
             'stat-ads': 'Iklan & Dokumentari',
             'stat-collab': 'Kolaborasi Agensi Utama',
-            'services-badge': 'Kepakaran Kami',
-            'services-title': 'Layanan Produksi & Pasca-Produksi End&#8209;to&#8209;End',
+            'services-badge': 'Kepakaran Saya',
+            'services-title': 'Perkhidmatan Produksi & Pasca-Produksi End&#8209;to&#8209;End',
             'services-desc': 'Dari idea kreatif hingga hasil render akhir, saya menyediakan penyelesaian visual menyeluruh untuk jenama dan organisasi.',
             'srv1-title': 'Dokumentari & Jurnalisme Sinematik',
-            'srv1-desc': 'Arahan kamera profesional, penceritaan visual yang mendalam, dan dokumentasi realiti lapangan dengan estetika visual berkualiti filem.',
-            'srv1-f1': 'Storytelling Berimpak',
-            'srv1-f2': 'Temubual Berstruktur',
+            'srv1-desc': 'Arahan kamera profesional, penceritaan visual yang mendalam, dan dokumentasi realiti lapangan dengan estetika filem.',
+            'srv1-f1': 'Penceritaan Berimpak',
+            'srv1-f2': 'Temu Bual Berstruktur',
             'srv1-f3': 'Arahan Sinematografi',
-            'srv2-title': 'Iklan TVC & Media Sosial (F&B / Retail)',
-            'srv2-desc': 'Video promosi yang dinamik untuk menonjolkan produk makanan & retail anda, dioptimumkan untuk platform digital dengan sound design sinematik.',
-            'srv2-f1': 'F&B Video Lighting',
-            'srv2-f2': 'Pacing Cepat & Menarik',
-            'srv2-f3': 'Optimasi Vertikal & Horizontal',
+            'srv2-title': 'Iklan TVC & Media Sosial (F&B / Runcit)',
+            'srv2-desc': 'Video promosi dinamik untuk menonjolkan produk makanan & runcit anda, dioptimumkan untuk platform digital dengan reka bentuk bunyi sinematik.',
+            'srv2-f1': 'Pencahayaan Video F&B',
+            'srv2-f2': 'Rentak Cepat & Menarik',
+            'srv2-f3': 'Pengoptimuman Menegak & Mendatar',
             'srv3-title': 'Pasca-Produksi & Multimedia',
-            'srv3-desc': 'Suntingan video kelas industri di DaVinci Resolve & Premiere, grading warna gred profesional, grafik bergerak (motion graphics) dan infografik dinamik.',
-            'srv3-f1': 'Color Grading Sinematik',
-            'srv3-f2': 'Motion Graphics & VFX',
-            'srv3-f3': 'Adunan Audio & Sound Design',
+            'srv3-desc': 'Suntingan video bertaraf industri dalam DaVinci Resolve & Premiere, gred warna profesional, grafik gerak dan infografik dinamik.',
+            'srv3-f1': 'Gred Warna Sinematik',
+            'srv3-f2': 'Grafik Gerak & VFX',
+            'srv3-f3': 'Adunan Audio & Reka Bentuk Bunyi',
             'port-badge': 'Galeri Portfolio',
-            'port-title': 'Hasil Kerja & Studi Kasus Terpilih',
-            'port-desc': 'Terokai projek terpilih mengikut kategori. Letakkan kursor pada kad (desktop) untuk memainkan pratonton video.',
+            'port-title': 'Hasil Kerja & Kajian Kes Terpilih',
+            'port-desc': 'Terokai projek terpilih mengikut kategori.',
+            'port-caps': 'Dokumentari & jurnalisme · TVC F&B/runcit · Pasca-produksi',
             'filter-doc': 'Dokumentari',
             'filter-ads': 'Event',
             'filter-fnb': 'F&B',
@@ -229,64 +230,23 @@ document.addEventListener('DOMContentLoaded', () => {
             'filter-ani': 'Animasi',
             'filter-news': 'News Value',
             'work-badge': 'Proses Kerja',
-            'work-title': 'Alur Kerja Kolaborasi Projek',
+            'work-title': 'Aliran Kerja Kolaborasi Projek',
             'work-desc': 'Bagaimana kita bekerjasama untuk menukar idea kasar anda menjadi video sinematik yang sedia ditayangkan.',
             'step1-title': 'Pra-Produksi & Konsep',
-            'step1-desc': 'Sesi sumbang saran dan perbincangan arah visual. Kami membina skrip, melakar papan cerita (storyboard), dan menetapkan jadual penggambaran yang teratur.',
+            'step1-desc': 'Sesi sumbang saran dan perbincangan arah visual. Saya membina skrip, melakarkan papan cerita, dan menyusun jadual penggambaran.',
             'step2-title': 'Produksi & Penggambaran',
             'step2-desc': 'Proses penggambaran profesional di lokasi. Saya menggunakan kelengkapan kamera gred pawagam, sistem pencahayaan sinematik, dan rakaman audio industri.',
             'step3-title': 'Pasca-Produksi & Hasil Akhir',
-            'step3-desc': 'Suntikan keajaiban dalam penyuntingan. Suntingan jalan cerita, gred warna sinematik, penambahan kesan bunyi, revisi (2-3 kali), dan penghantaran fail resolusi tinggi.',
+            'step3-desc': 'Penyuntingan cerita, gred warna sinematik, kesan bunyi, 2–3 pusingan revisi, dan penghantaran fail resolusi tinggi.',
             'abt-badge': 'Tentang Saya',
             'abt-title': 'Di Sebalik Lensa & Skrin Suntingan',
             'abt-skills': 'Kemahiran Perisian Utama',
-            'abt-resume': 'Muat Turun Resume Lengkap (PDF)',
-            'price-badge': 'Pelan Kerjasama',
-            'price-title': 'Kolaborasi Fleksibel Sesuai Kebutuhan Projek',
-            'price-desc': 'Anggaran telus untuk membantu anda merancang pelaburan kandungan kreatif anda.',
-            'price1-title': 'Day Rate / Kontrak Harian',
-            'price1-desc': 'Terbaik untuk sewaan operator kamera bebas (freelance camera op) atau penyuntingan di lokasi.',
-            'price1-f1': '10 Jam Waktu Penggambaran/Suntingan Sehari',
-            'price1-f2': 'Termasuk Kelengkapan Kamera & Audio Asas',
-            'price1-f3': 'Krew Tunggal (Solo Operator)',
-            'price1-f4': 'Serahan Fail Mentah (Raw Footage) Disediakan',
-            'price1-cta': 'Tanya Sebut Harga',
-            'price-pop': 'TERPOPULER',
-            'price2-title': 'Project-Based / Produksi Penuh',
-            'price2-desc': 'Terbaik untuk penghasilan video komersial lengkap, video F&B promosi, atau dokumentari korporat.',
-            'price2-f1': 'Pengurusan End-to-End (Pra hingga Pasca)',
-            'price2-f2': 'Perancangan Papan Cerita & Skrip',
-            'price2-f3': 'Set Kamera Cinema, Lighting & Audio Komplet',
-            'price2-f4': 'Gred Warna Profesional & Sound Design',
-            'price2-f5': 'Percuma 3 Pusingan Revisi Utama',
-            'price2-cta': 'Bincang Projek Sekarang',
-            'price-info': 'Keterangan Penting:',
-            'price-note': 'Semua anggaran adalah fleksibel dan terbuka untuk rundingan mengikut kesesuaian bajet dan skala projek anda.',
-            'test-badge': 'Maklum Balas Industri',
-            'test-title': 'Apa Kata Rakan Kolaborator',
-            'test-quote': '"Ihsan mempunyai mata sinematik yang luar biasa. Sepanjang bekerjasama di The Hatch, beliau sentiasa berjaya menterjemahkan idea papan cerita yang kompleks menjadi shot visual yang hidup, bernyawa, dan menyentuh emosi penonton. Dedikasi beliau terhadap penyuntingan video gred profesional adalah aset besar untuk sebarang projek."',
-            'faq-badge': 'FAQ',
-            'faq-title': 'Pertanyaan Sering Diajukan',
-            'faq-desc': 'Jawapan pantas untuk persoalan lazim mengenai perkhidmatan dan kaedah kerja saya.',
+            'abt-resume': 'Minta CV melalui WhatsApp',
             'cont-badge': 'Hubungi Saya',
             'cont-title': 'Mempunyai Cerita untuk Disampaikan? Mari Kita Abadikan Bersama.',
-            'cont-intro': 'Sama ada anda mahu memulakan projek dokumentari, memerlukan video promosi F&B yang menggiurkan, atau sekadar ingin menyapa, pintu rundingan sentiasa terbuka.',
-            'cont-email': 'Emel Profesional',
-            'cont-phone': 'Hubungi / WhatsApp',
-            'form-name': 'Nama Penuh',
-            'form-email': 'Alamat Emel',
-            'form-cat': 'Kategori Projek',
-            'form-opt1': 'Dokumentari / Jurnalisme',
-            'form-opt2': 'Iklan TVC / Media Sosial',
-            'form-opt3': 'Pasca-Produksi / Suntingan',
-            'form-opt4': 'Grafik / Animasi',
-            'form-opt5': 'Lain-lain',
-            'err-name': 'Sila masukkan nama penuh anda.',
-            'err-email': 'Sila masukkan alamat emel yang sah.',
-            'err-cat': 'Sila pilih kategori projek.',
-            'err-msg': 'Sila tulis mesej anda.',
-            'form-msg': 'Perincian Pesan Singkat',
-            'form-btn': 'Hantar Mesej Kolaborasi',
+            'cont-intro': 'Sama ada anda ingin memulakan projek dokumentari, memerlukan video promosi F&B yang membangkitkan selera, atau sekadar ingin menyapa, pintu rundingan sentiasa terbuka.',
+            'cont-wa-cta': 'WhatsApp Saya',
+            'cont-wa-hint': 'Sertakan jenis projek, tarikh, dan bajet kasar.',
             'p1-f1': '10 Jam Waktu Penggambaran/Suntingan Sehari',
             'p1-f2': 'Termasuk Kelengkapan Kamera & Audio Asas',
             'p1-f3': 'Krew Tunggal (Solo Operator)',
@@ -296,25 +256,14 @@ document.addEventListener('DOMContentLoaded', () => {
             'p2-f3': 'Penggambaran & Penyuntingan Lengkap',
             'p2-f4': 'Grafik Gerak & Color Grading',
             'p2-f5': 'Masa Kerja Mengikut Skop Projek',
-            'succ-title': 'Mesej Berjaya Dihantar',
-            'succ-desc': 'Terima kasih. Saya akan hubungi anda secepat mungkin.',
-            'form-name-ph': 'cth: Ahmad Zaki',
-            'form-email-ph': 'cth: zaki@company.com',
-            'form-msg-ph': 'Nyatakan objektif, tarikh jangkaan, dan bajet kasar anda...',
-            'abt-p1': 'Saya merupakan lulusan <strong>Seni Grafis & Reka Bentuk dari UNISEL</strong> yang memilih untuk mengejar minat mendalam dalam dunia penceritaan visual bergerak. Perjalanan karier saya bermula dari bilik berita media arus perdana di <strong>Malaysian Gazette</strong> sehinggalah ke agensi kreatif terkemuka, <strong>The Hatch</strong>.',
+            'abt-p1': 'Saya lulusan <strong>Seni Grafik & Reka Bentuk dari UNISEL</strong> yang memilih untuk mengejar minat mendalam dalam dunia penceritaan visual bergerak. Perjalanan karier saya bermula dari bilik berita media arus perdana di <strong>Malaysian Gazette</strong> sehingga ke agensi kreatif terkemuka, <strong>The Hatch</strong>.',
             'abt-p2': 'Berpangkalan di <strong>Sungai Buloh, Kuala Lumpur</strong>, saya bersedia untuk menerima tugasan di seluruh Malaysia mahupun di luar negara bagi menghasilkan karya yang bermakna, berciri sinematik, dan mencapai objektif perniagaan anda.',
-            'faq-q1': 'Apakah Anda memiliki peralatan kamera dan lighting sendiri?',
-            'faq-a1': 'Ya. Saya memiliki set peralatan kamera gred pawagam/produksi yang lengkap, termasuk unit pencahayaan (lighting kit), sistem mikrofon tanpa wayar (wireless audio), serta stesen kerja penyuntingan berkuasa tinggi yang sedia digunakan untuk penggambaran serta-merta.',
-            'faq-q2': 'Apakah siap menerima projek di luar kawasan Kuala Lumpur/Selangor?',
-            'faq-a2': 'Sangat bersedia. Walaupun bertapak di Sungai Buloh, saya bersedia untuk mengembara bagi menjayakan syuting komersial atau dokumentari di mana-mana sahaja di seluruh wilayah Semenanjung, Sabah, Sarawak, malah luar negara.',
-            'faq-q3': 'Berapa kali jatah revisi yang didapatkan dalam proses editing?',
-            'faq-a3': 'Untuk setiap projek pengeditan standard, saya menyediakan 2 hingga 3 kali pusingan revisi utama secara percuma. Ini memastikan kualiti hasil akhir bertepatan dengan jangkaan dan kepuasan anda.',
             'p1-title': 'Dari ICU ke Liang Lahad',
             'p1-desc': 'Dokumentari mendalam mengenai perjuangan petugas barisan hadapan dan realiti wad kritikal COVID-19.',
             'p1-res': '500k+ tontonan digital & maklum balas nasional',
             'p2-title': 'Kita Mesti Menang',
             'p2-desc': 'Kisah inspirasi masyarakat Malaysia menentang pandemik global yang mendapat anugerah media nasional.',
-            'p2-res': 'Pemenang Berita Video Terbaik (MPI Petronas 2020)',
+            'p2-res': 'Pasukan pemenang Berita Video Terbaik (MPI Petronas 2020)',
             'p3-title': 'Ramadan di Balik Jeriji Besi',
             'p3-desc': 'Paparan di sebalik tirai besi para petugas dan penghuni Penjara Kajang dalam menyambut Ramadan yang mulia ini.',
             'p4-title': 'Covid-19: Bekerja dengan Mayat yang Berbeza',
@@ -325,8 +274,6 @@ document.addEventListener('DOMContentLoaded', () => {
             'p6-desc': 'Shoot at Ver Bar Kuala Lumpur.',
             'p7-title': 'Domingos de Tapas Sundays',
             'p7-desc': 'Video Highlight reel of Bocado Restaurant on event Domingos de Tapas.',
-            'p8-title': 'Highlight Reel for New Restaurant Opening Feliz KL',
-            'p8-desc': 'Latin American flavours and vibes at Feliz.',
             'p9-title': 'Highlight Reels for Nadodi Restaurant',
             'p9-desc': 'Heritage and childhood memories through meticulously crafted cocktails.',
             'p10-title': 'Taste Tradition with Aliyaa Jaffna Style Crab Curry',
@@ -362,13 +309,13 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero-badge': 'Videographer / Editor / Freelance',
             'hero-cta': 'Hire Me!',
             'trust-title': 'Visual Quality Recognized by National Media Industry',
-            'award-title': 'Best Video News Winner',
+            'award-title': 'Second Cameraman, Best Video News Winning Team',
             'award-event': 'Malaysian Press Institute Awards (MPI Petronas 2020)',
-            'award-desc': 'Through the documentary <strong>"Kita Mesti Menang"</strong>, highlighting high-impact visual journalism.',
+            'award-desc': 'The documentary <strong>"Kita Mesti Menang"</strong> showcases high-impact visual journalism.',
             'stat-exp': 'Years of Experience',
             'stat-ads': 'Commercials & Documentaries',
             'stat-collab': 'Major Agency Collaborations',
-            'services-badge': 'Our Expertise',
+            'services-badge': 'My Expertise',
             'services-title': 'End&#8209;to&#8209;End Production & Post-Production Services',
             'services-desc': 'From creative ideas to final renders, I provide comprehensive visual solutions for brands and organizations.',
             'srv1-title': 'Documentaries & Cinematic Journalism',
@@ -388,7 +335,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'srv3-f3': 'Audio Mixing & Sound Design',
             'port-badge': 'Portfolio Gallery',
             'port-title': 'Selected Works & Case Studies',
-            'port-desc': 'Explore selected projects by category. Hover over cards (desktop) to play video previews.',
+            'port-desc': 'Explore selected projects by category.',
+            'port-caps': 'Documentary & journalism · F&B/retail TVC · Post-production',
             'filter-doc': 'Documentary',
             'filter-ads': 'Event',
             'filter-fnb': 'F&B',
@@ -403,57 +351,16 @@ document.addEventListener('DOMContentLoaded', () => {
             'step2-title': 'Production & Shooting',
             'step2-desc': 'Professional on-location shooting. I use cinema-grade camera equipment, cinematic lighting systems, and industry audio recording.',
             'step3-title': 'Post-Production & Final Delivery',
-            'step3-desc': 'Injecting magic through editing. Storyline editing, cinematic color grading, sound effects, revisions (2-3 times), and high-resolution file delivery.',
+            'step3-desc': 'Injecting magic through editing. Storyline editing, cinematic color grading, sound effects, revisions (2–3 rounds), and high-resolution file delivery.',
             'abt-badge': 'About Me',
             'abt-title': 'Behind the Lens & Editing Screen',
             'abt-skills': 'Key Software Skills',
-            'abt-resume': 'Download Full Resume (PDF)',
-            'price-badge': 'Collaboration Plans',
-            'price-title': 'Flexible Collaboration for Your Project Needs',
-            'price-desc': 'Transparent estimates to help you plan your creative content investments.',
-            'price1-title': 'Day Rate / Daily Contract',
-            'price1-desc': 'Best for hiring freelance camera operators or on-location editing.',
-            'price1-f1': '10 Hours of Shooting/Editing per Day',
-            'price1-f2': 'Includes Basic Camera & Audio Equipment',
-            'price1-f3': 'Single Crew (Solo Operator)',
-            'price1-f4': 'Raw Footage Delivery Provided',
-            'price1-cta': 'Request a Quote',
-            'price-pop': 'MOST POPULAR',
-            'price2-title': 'Project-Based / Full Production',
-            'price2-desc': 'Best for complete commercial video production, promotional F&B videos, or corporate documentaries.',
-            'price2-f1': 'End-to-End Management (Pre to Post)',
-            'price2-f2': 'Storyboard & Script Planning',
-            'price2-f3': 'Complete Cinema Camera, Lighting & Audio Set',
-            'price2-f4': 'Professional Color Grading & Sound Design',
-            'price2-f5': 'Free 3 Rounds of Major Revisions',
-            'price2-cta': 'Discuss Your Project Now',
-            'price-info': 'Important Note:',
-            'price-note': 'All estimates are flexible and open for negotiation according to your budget and project scale.',
-            'test-badge': 'Industry Feedback',
-            'test-title': 'What Collaborators Say',
-            'test-quote': '"Ihsan has an extraordinary cinematic eye. Throughout our collaboration at The Hatch, he consistently managed to translate complex storyboard ideas into visual shots that are lively, breathing, and emotionally touching. His dedication to professional-grade video editing is a huge asset to any project."',
-            'faq-badge': 'FAQ',
-            'faq-title': 'Frequently Asked Questions',
-            'faq-desc': 'Quick answers to common questions about my services and working methods.',
+            'abt-resume': 'Request CV via WhatsApp',
             'cont-badge': 'Contact Me',
             'cont-title': 'Have a Story to Tell? Let\'s Capture It Together.',
             'cont-intro': 'Whether you want to start a documentary project, need an appetizing F&B promo video, or just want to say hello, the door to discussion is always open.',
-            'cont-email': 'Professional Email',
-            'cont-phone': 'Call / WhatsApp',
-            'form-name': 'Full Name',
-            'form-email': 'Email Address',
-            'form-cat': 'Project Category',
-            'form-opt1': 'Documentary / Journalism',
-            'form-opt2': 'TVC Ads / Social Media',
-            'form-opt3': 'Post-Production / Editing',
-            'form-opt4': 'Motion Graphics / Animation',
-            'form-opt5': 'Other',
-            'err-name': 'Please enter your full name.',
-            'err-email': 'Please enter a valid email address.',
-            'err-cat': 'Please choose a project category.',
-            'err-msg': 'Please write your message.',
-            'form-msg': 'Short Message Details',
-            'form-btn': 'Send Collaboration Message',
+            'cont-wa-cta': 'Message Me on WhatsApp',
+            'cont-wa-hint': 'Include your project type, date, and rough budget.',
             'p1-f1': '10 Hours Shooting/Editing Per Day',
             'p1-f2': 'Basic Camera & Audio Gear Included',
             'p1-f3': 'Solo Operator',
@@ -463,25 +370,14 @@ document.addEventListener('DOMContentLoaded', () => {
             'p2-f3': 'Full Production & Editing',
             'p2-f4': 'Motion Graphics & Color Grading',
             'p2-f5': 'Working Hours Based on Project Scope',
-            'succ-title': 'Message Sent Successfully',
-            'succ-desc': 'Thank you. I will contact you as soon as possible.',
-            'form-name-ph': 'e.g: Ahmad Zaki',
-            'form-email-ph': 'e.g: zaki@company.com',
-            'form-msg-ph': 'State your objective, expected date, and rough budget...',
             'abt-p1': 'I am a graduate in <strong>Graphic Art & Design from UNISEL</strong> who chose to pursue a deep passion for visual storytelling. My career journey started from the mainstream newsroom at <strong>Malaysian Gazette</strong> to the leading creative agency, <strong>The Hatch</strong>.',
             'abt-p2': 'Based in <strong>Sungai Buloh, Kuala Lumpur</strong>, I am ready to take on assignments across Malaysia or abroad to produce meaningful, cinematic works that achieve your business objectives.',
-            'faq-q1': 'Do you have your own camera and lighting equipment?',
-            'faq-a1': 'Yes. I own a complete set of cinema/production grade camera equipment, including lighting kits, wireless audio microphone systems, and a high-performance editing workstation ready for immediate shoots.',
-            'faq-q2': 'Are you willing to accept projects outside the Kuala Lumpur/Selangor area?',
-            'faq-a2': 'Absolutely. Although based in Sungai Buloh, I am ready to travel to execute commercial or documentary shoots anywhere across the Peninsula, Sabah, Sarawak, or even overseas.',
-            'faq-q3': 'How many revision rounds are included in the editing process?',
-            'faq-a3': 'For every standard editing project, I provide 2 to 3 major revision rounds for free. This ensures the final output quality meets your expectations and satisfaction.',
             'p1-title': 'Dari ICU ke Liang Lahad',
             'p1-desc': 'An in-depth documentary on the struggles of frontliners and the reality of COVID-19 critical wards.',
             'p1-res': '500k+ digital views & national feedback',
             'p2-title': 'Kita Mesti Menang',
             'p2-desc': 'An inspiring story of Malaysians fighting the global pandemic, which won a national media award.',
-            'p2-res': 'Best Video News Winner (MPI Petronas 2020)',
+            'p2-res': 'Best Video News winning team (MPI Petronas 2020)',
             'p3-title': 'Ramadan Behind Iron Bars',
             'p3-desc': 'A look behind the bars at the officers and inmates of Kajang Prison during the holy month of Ramadan.',
             'p4-title': 'Covid-19: Working with the Dead',
@@ -492,8 +388,6 @@ document.addEventListener('DOMContentLoaded', () => {
             'p6-desc': 'Shoot at Ver Bar Kuala Lumpur.',
             'p7-title': 'Domingos de Tapas Sundays',
             'p7-desc': 'Video Highlight reel of Bocado Restaurant on event Domingos de Tapas.',
-            'p8-title': 'Highlight Reel for New Restaurant Opening Feliz KL',
-            'p8-desc': 'Latin American flavours and vibes at Feliz.',
             'p9-title': 'Highlight Reels for Nadodi Restaurant',
             'p9-desc': 'Heritage and childhood memories through meticulously crafted cocktails.',
             'p10-title': 'Taste Tradition with Aliyaa Jaffna Style Crab Curry',
@@ -538,15 +432,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const CATEGORY_LABELS = {
         dokumentari: { ms: 'Dokumentari', en: 'Documentary' },
-        event: { ms: 'Event', en: 'Event' },
+        event: { ms: 'Acara', en: 'Event' },
         fnb: { ms: 'F&B', en: 'F&B' },
         grafik: { ms: 'Grafik', en: 'Graphics' },
         animasi: { ms: 'Animasi', en: 'Animation' },
-        news: { ms: 'News Value', en: 'News Value' },
-        montage: { ms: 'Montage', en: 'Montage' },
-        interview: { ms: 'Interview', en: 'Interview' },
-        shortvideo: { ms: 'Short Video', en: 'Short Video' },
-        brand: { ms: 'Brand', en: 'Brand' }
+        news: { ms: 'Nilai Berita', en: 'News Value' },
+        montage: { ms: 'Montaj', en: 'Montage' },
+        interview: { ms: 'Temu Bual', en: 'Interview' },
+        shortvideo: { ms: 'Video Pendek', en: 'Short Video' },
+        brand: { ms: 'Jenama', en: 'Brand' }
     };
 
     const PREFERRED_CATEGORY_ORDER = ['dokumentari', 'event', 'fnb', 'grafik', 'animasi', 'news', 'montage', 'interview', 'shortvideo', 'brand'];
@@ -1007,42 +901,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ---------------------------------------------------------
-    // 7. FAQ ACCORDION EXPAND / COLLAPSE
-    // ---------------------------------------------------------
-    const faqItems = document.querySelectorAll('.faq-item');
-
-    faqItems.forEach(item => {
-        const trigger = item.querySelector('.faq-trigger');
-        const content = item.querySelector('.faq-content');
-
-        if (trigger && content) {
-            trigger.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-
-            // Close other items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
-                    otherItem.querySelector('.faq-content').style.maxHeight = '0px';
-                }
-            });
-
-            // Toggle current item
-            if (isActive) {
-                item.classList.remove('active');
-                trigger.setAttribute('aria-expanded', 'false');
-                content.style.maxHeight = '0px';
-            } else {
-                item.classList.add('active');
-                trigger.setAttribute('aria-expanded', 'true');
-                content.style.maxHeight = content.scrollHeight + 'px';
-            }
-        });
-        }
-    });
-
-    // ---------------------------------------------------------
     // 8. SCROLL REVEAL ANIMATIONS (INTERSECTION OBSERVER)
     // ---------------------------------------------------------
     const revealElements = document.querySelectorAll('.section-reveal');
@@ -1073,99 +931,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ---------------------------------------------------------
-    // 9. CONTACT FORM VALIDATION & SUBMISSION
+    // 9. CONTACT
     // ---------------------------------------------------------
-    const contactForm = document.getElementById('portfolio-contact-form');
-    const successBox = document.getElementById('form-success-box');
-
-    // Form Inputs
-    const nameInput = document.getElementById('form-name');
-    const emailInput = document.getElementById('form-email');
-    const categorySelect = document.getElementById('form-category');
-    const messageInput = document.getElementById('form-message');
-
-    const validateEmail = (email) => {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(email);
-    };
-
-    const setError = (input, hasError) => {
-        const group = input.closest('.form-group');
-        group.classList.toggle('error', hasError);
-    };
-
-    // Live validation triggers
-    if (nameInput) nameInput.addEventListener('input', () => setError(nameInput, nameInput.value.trim() === ''));
-    if (emailInput) emailInput.addEventListener('input', () => setError(emailInput, !validateEmail(emailInput.value.trim())));
-    if (categorySelect) categorySelect.addEventListener('change', () => setError(categorySelect, categorySelect.value === ''));
-    if (messageInput) messageInput.addEventListener('input', () => setError(messageInput, messageInput.value.trim() === ''));
-
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        // Final validation check
-        const nameVal = nameInput.value.trim();
-        const emailVal = emailInput.value.trim();
-        const categoryVal = categorySelect.value;
-        const messageVal = messageInput.value.trim();
-
-        const validations = [
-            { input: nameInput, isValid: nameVal !== '' },
-            { input: emailInput, isValid: validateEmail(emailVal) },
-            { input: categorySelect, isValid: categoryVal !== '' },
-            { input: messageInput, isValid: messageVal !== '' }
-        ];
-
-        let isValid = true;
-        validations.forEach(({ input, isValid: valid }) => {
-            setError(input, !valid);
-            if (!valid) isValid = false;
-        });
-
-        if (isValid) {
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnHTML = submitBtn.innerHTML;
-
-            submitBtn.disabled = true;
-            contactForm.setAttribute('aria-busy', 'true');
-            const currentLang = document.documentElement.lang || 'ms';
-            const sendingText = currentLang === 'ms' ? 'Sedang dihantar...' : 'Sending...';
-            submitBtn.innerHTML = `<i data-lucide="loader-2" class="animate-spin"></i> ${sendingText}`;
-            lucide.createIcons(); // refresh loader icon
-
-            // Build WhatsApp message to owner's phone
-            const categoryLabel = categorySelect.options[categorySelect.selectedIndex].text;
-            const waText =
-                `*Mesej Baru dari Portfolio*\n\n` +
-                `*Nama:* ${nameVal}\n` +
-                `*Emel:* ${emailVal}\n` +
-                `*Kategori:* ${categoryLabel}\n` +
-                `*Mesej:* ${messageVal}`;
-            const waUrl = `https://wa.me/60196266072?text=${encodeURIComponent(waText)}`;
-
-            setTimeout(() => {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnHTML;
-                contactForm.setAttribute('aria-busy', 'false');
-                lucide.createIcons();
-
-                // Open WhatsApp with pre-filled message (delivers to owner's phone)
-                window.open(waUrl, '_blank', 'noopener');
-
-                // Show success block
-                successBox.classList.add('show');
-
-                // Reset form fields
-                contactForm.reset();
-
-                // Clear success box after 8 seconds
-                setTimeout(() => {
-                    successBox.classList.remove('show');
-                }, 8000);
-
-            }, 800);
-        }
-    });
+    // The contact section is a direct WhatsApp CTA link in the markup;
+    // there is no in-page form and therefore no client-side submit logic.
 
     // ---------------------------------------------------------
     // 9. TYPING EFFECT FOR HERO TITLE
