@@ -27,3 +27,5 @@ dev-server.log
 # Backup
 *.backup
 index.html.backup
+.vercel
+.env*
