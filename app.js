@@ -1214,3 +1214,33 @@ if (document.readyState === 'loading') {
     initHeroParallax();
 }
 
+/* Hero background video autoplay — retry muted play on load and on first
+   user interaction. Some mobile browsers skip HTML autoplay but allow a
+   programmatic muted play once the media is ready. */
+(function initHeroAutoplay() {
+    const videos = document.querySelectorAll('.hero-bg-video');
+    if (!videos.length) return;
+
+    const tryPlay = (video) => {
+        if (!video || !video.paused) return;
+        const p = video.play();
+        if (p && typeof p.catch === 'function') p.catch(() => {});
+    };
+
+    videos.forEach(video => {
+        video.muted = true; // required for autoplay on mobile
+        video.setAttribute('muted', '');
+        video.addEventListener('canplay', () => tryPlay(video), { once: true });
+        tryPlay(video);
+    });
+
+    // Retry after the first touch/click if autoplay was initially blocked
+    const retry = () => {
+        videos.forEach(tryPlay);
+        document.removeEventListener('touchstart', retry);
+        document.removeEventListener('click', retry);
+    };
+    document.addEventListener('touchstart', retry, { passive: true });
+    document.addEventListener('click', retry);
+})();
+
