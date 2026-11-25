@@ -2762,6 +2762,13 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
     transform: translateY(0);
 }
 
+/* Hero is above the fold: never leave it invisible if JS fails to run
+   (e.g. an icon CDN is blocked and delays the reveal observer). */
+.hero-section.section-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
 /* ----------------------------------
    20. BACKGROUND MUSIC TOGGLE
    ---------------------------------- */

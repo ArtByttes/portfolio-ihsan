@@ -4,8 +4,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Initialize Lucide Icons
-    lucide.createIcons();
+    // Initialize Lucide Icons — guard so a blocked/slow CDN never aborts the
+    // rest of this DOMContentLoaded handler (hero reveal, menu, videos, etc.)
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        try { window.lucide.createIcons(); } catch (err) { /* icons are decorative */ }
+    }
 
     // ---------------------------------------------------------
     // 0. IMAGE ERROR FALLBACK
@@ -1166,7 +1169,9 @@ function updateMusicToggleUI() {
     toggleBtn.setAttribute('aria-pressed', audible ? 'true' : 'false');
     toggleBtn.setAttribute('aria-label', audible ? 'Pause background music' : 'Play background music');
     icon.setAttribute('data-lucide', audible ? 'volume-2' : 'volume-x');
-    lucide.createIcons();
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        try { window.lucide.createIcons(); } catch (err) { /* icons are decorative */ }
+    }
 }
 
 /* Hero background video parallax on cursor (desktop only) */
