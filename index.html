@@ -34,13 +34,16 @@
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' https:; connect-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://api.fontshare.com; font-src 'self' https://fonts.gstatic.com https://cdn.fontshare.com; img-src 'self' data: https:; media-src 'self' https:; connect-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com;">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+        href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Core CSS -->
@@ -138,9 +141,10 @@
         <section id="portfolio" class="portfolio-section section-reveal">
             <div class="container">
                 <div class="section-intro text-center">
-                    <span class="section-badge" data-i18n="port-badge">Galeri Portfolio</span>
-                    <h2 class="section-title" data-i18n="port-title">Hasil Kerja &amp; Kajian Kes Terpilih</h2>
-                    <p class="section-desc" data-i18n="port-desc">Terokai projek terpilih mengikut kategori.</p>
+                    <h2 class="section-title portfolio-title-image">
+                        <img src="/video-galeri-title.png" alt="Video Galeri" width="500" height="140"
+                            loading="eager">
+                    </h2>
                     <p class="section-caps" data-i18n="port-caps">Dokumentari & jurnalisme · TVC F&amp;B/runcit · Pasca-produksi</p>
                 </div>
 
@@ -1168,12 +1172,6 @@
                             </div>
                         </div>
 
-                        <!-- Resume Download CTA -->
-                        <div class="about-actions">
-                            <a href="https://wa.me/60196266072?text=Hi%20Ihsan,%20boleh%20saya%20minta%20CV%20anda%3F" target="_blank" rel="noopener" class="btn btn-secondary btn-icon" id="download-resume-btn">
-                                <i data-lucide="file-text"></i> <span data-i18n="abt-resume">Minta CV melalui WhatsApp</span>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1198,12 +1196,6 @@
                             <i data-lucide="message-circle"></i>
                             <span data-i18n="cont-wa-cta">WhatsApp Saya</span>
                         </a>
-                        <p class="contact-band-hint" data-i18n="cont-wa-hint">Sertakan jenis projek, tarikh, dan bajet kasar.</p>
-                        <div class="contact-band-links">
-                            <a href="mailto:nihsansalleh@gmail.com" class="contact-band-link">nihsansalleh@gmail.com</a>
-                            <span class="contact-band-sep" aria-hidden="true">·</span>
-                            <a href="tel:+60196266072" class="contact-band-link">+60 19-626 6072</a>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -8,7 +8,7 @@
 :root {
     /* Fonts */
     --font-heading: 'Syne', sans-serif;
-    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Satoshi', 'Plus Jakarta Sans', sans-serif;
 
     /* Transition Speeds */
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -932,6 +932,58 @@ body.light-theme .icon-moon {
     padding: 100px 0;
     background-color: var(--bg-secondary);
     border-top: 1px solid var(--border-color);
+    position: relative;
+    overflow: clip;
+    isolation: isolate;
+}
+
+/* "VIDEO GALERI" image title */
+.portfolio-title-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+    margin-top: -40px;
+}
+
+.portfolio-title-image img {
+    width: min(500px, 80vw);
+    height: auto;
+    filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.35));
+}
+
+/* Category caps line under the VIDEO GALERI title */
+.portfolio-section .section-caps {
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+body.light-theme .portfolio-title-image img {
+    /* Black background of the title image removed on light theme */
+    mix-blend-mode: multiply;
+}
+
+/* Radial grid texture — pure CSS, uniform squares */
+.portfolio-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: center;
+    -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 50%, black 25%, transparent 75%);
+    mask-image: radial-gradient(ellipse 75% 65% at 50% 50%, black 25%, transparent 75%);
+    pointer-events: none;
+}
+
+body.dark-theme .portfolio-section::before {
+    --grid-line: rgba(197, 160, 89, 0.10);
+}
+
+body.light-theme .portfolio-section::before {
+    --grid-line: rgba(15, 23, 42, 0.07);
 }
 
 /* Filter controls */
@@ -2214,13 +2266,22 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
         align-items: start;
     }
 
+    /* Center contact content on mobile */
+    .contact-band > * {
+        text-align: center;
+    }
+
     .contact-band-actions {
-        align-items: stretch;
+        align-items: center;
     }
 
     .contact-band-cta {
         justify-content: center;
         width: 100%;
+    }
+
+    .contact-band-links {
+        justify-content: center;
     }
 
     /* Testimonial centering */
