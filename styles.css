@@ -2307,14 +2307,17 @@ body.portfolio-modal-open .portfolio-card:hover .card-img {
         text-align: center;
     }
 
-    /* Stats grid centering */
+    /* Stats grid: side-by-side cards on mobile */
     .stats-grid {
-        justify-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        justify-items: stretch;
     }
 
     .stat-card {
         width: 100%;
-        max-width: 320px;
+        max-width: none;
     }
 
     /* Service cards centering */
